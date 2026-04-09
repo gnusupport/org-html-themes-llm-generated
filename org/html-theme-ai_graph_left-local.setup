@@ -1,0 +1,10 @@
+# -*- mode: org; -*-
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/ai_graph_left_theme/css/ai-graph-left.css"/>
+#+HTML_HEAD: <script src="https://d3js.org/d3.v7.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../src/ai_graph_theme/js/ai-graph.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../src/lib/js/org-keyboard-shortcuts.js"></script>

@@ -1,0 +1,49 @@
+# -*- mode: org; -*-
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/ai_graph_theme/css/ai-graph.css"/>
+#+HTML_HEAD: <script src="https://d3js.org/d3.v7.min.js"></script>
+#+HTML_HEAD_END: 
+#+HTML_HEAD_END: <!-- AI Graph Theme: Inject container before body content -->
+#+HTML_HEAD_END: <script type="text/javascript">
+#+HTML_HEAD_END: //<![CDATA[
+#+HTML_HEAD_END: document.addEventListener('DOMContentLoaded', function() {
+#+HTML_HEAD_END:   // Create graph container if it doesn't exist
+#+HTML_HEAD_END:   if (!document.getElementById('ai-graph-container')) {
+#+HTML_HEAD_END:     const body = document.body;
+#+HTML_HEAD_END:     const container = document.createElement('div');
+#+HTML_HEAD_END:     container.id = 'ai-graph-container';
+#+HTML_HEAD_END:     // Insert before content
+#+HTML_HEAD_END:     const content = document.getElementById('content') || document.querySelector('.org-div-container');
+#+HTML_HEAD_END:     if (content) {
+#+HTML_HEAD_END:       body.insertBefore(container, content);
+#+HTML_HEAD_END:     } else {
+#+HTML_HEAD_END:       body.appendChild(container);
+#+HTML_HEAD_END:     }
+#+HTML_HEAD_END:   }
+#+HTML_HEAD_END: });
+#+HTML_HEAD_END: //]]>
+#+HTML_HEAD_END: </script>
+#+HTML_HEAD: <script type="text/javascript" src="src/ai_graph_theme/js/ai-graph.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/org-keyboard-shortcuts.js"></script>
+#+HTML_HEAD_END: <div id="ai-loading">Building Graph...</div>
+#+HTML_HEAD_END: <div id="ai-tooltip"></div>
+#+HTML_HEAD_END: <div id="ai-legend">
+#+HTML_HEAD_END:   <h4>Node Legend</h4>
+#+HTML_HEAD_END:   <div class="legend-item"><div class="legend-color" style="background: #FF6B6B; width: 20px; height: 20px; border-radius: 50%;"></div><span class="legend-label">Document</span></div>
+#+HTML_HEAD_END:   <div class="legend-item"><div class="legend-color" style="background: #9D4EDD; width: 16px; height: 16px; border-radius: 50%;"></div><span class="legend-label">Section (H1)</span></div>
+#+HTML_HEAD_END:   <div class="legend-item"><div class="legend-color" style="background: #00D4FF; width: 12px; height: 12px; border-radius: 50%;"></div><span class="legend-label">Subsection (H2)</span></div>
+#+HTML_HEAD_END:   <div class="legend-item"><div class="legend-color" style="background: #00FFFF; width: 10px; height: 10px; border-radius: 50%;"></div><span class="legend-label">Detail (H3)</span></div>
+#+HTML_HEAD_END: </div>
+#+HTML_HEAD_END: <div id="ai-help" style="display: none;">
+#+HTML_HEAD_END:   <h4>Controls</h4>
+#+HTML_HEAD_END:   <ul>
+#+HTML_HEAD_END:     <li><kbd>Click</kbd> node to navigate</li>
+#+HTML_HEAD_END:     <li><kbd>Drag</kbd> node to move</li>
+#+HTML_HEAD_END:     <li><kbd>Scroll</kbd> to zoom</li>
+#+HTML_HEAD_END:     <li><kbd>Esc</kbd> to reset view</li>
+#+HTML_HEAD_END:   </ul>
+#+HTML_HEAD_END: </div>

@@ -1,0 +1,120 @@
+#+TITLE: AI Graph Theme - Interactive Graph Demo
+#+AUTHOR: AI Research Lab
+#+DESCRIPTION: Demonstration of force-directed graph navigation
+#+SETUPFILE: org/html-theme-ai_graph-local.setup
+
+* Artificial Intelligence Overview
+This document demonstrates the AI Graph theme with interactive force-directed graph navigation.
+
+Click on nodes in the graph to navigate to sections. Drag nodes to rearrange. Zoom with scroll wheel.
+
+** Core Concepts
+*** Machine Learning
+Machine learning algorithms learn patterns from data.
+
+**** Supervised Learning
+Uses labeled training data to make predictions.
+
+**** Unsupervised Learning  
+Finds patterns in unlabeled data.
+
+*** Neural Networks
+Computational models inspired by biological neurons.
+
+**** Deep Learning
+Neural networks with multiple layers.
+
+**** Transformer Models
+Attention-based architectures for sequence processing.
+
+** Applications
+*** Natural Language Processing
+Understanding and generating human language.
+
+**** Text Generation
+Creating coherent text from prompts.
+
+**** Translation
+Converting text between languages.
+
+*** Computer Vision
+Enabling machines to "see" and interpret images.
+
+**** Image Classification
+Identifying objects in images.
+
+**** Object Detection
+Locating multiple objects in images.
+
+** Research Areas
+*** Reinforcement Learning
+Learning through trial and error with rewards.
+
+*** Generative AI
+Creating new content like images and text.
+
+*** AI Ethics
+Ensuring responsible AI development.
+
+**** Bias and Fairness
+Addressing algorithmic bias in AI systems.
+
+**** Privacy
+Protecting user data in AI applications.
+
+** Code Examples
+*** Python ML Example
+#+BEGIN_SRC python
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+#+END_SRC
+
+*** JavaScript ML Example
+#+BEGIN_SRC javascript
+const model = await tf.loadLayersModel('model.json');
+const prediction = model.predict(inputTensor);
+console.log(prediction.arraySync());
+#+END_SRC
+
+** Tools and Frameworks
+*** TensorFlow
+Google's open-source machine learning platform.
+
+*** PyTorch
+Facebook's deep learning framework.
+
+*** scikit-learn
+Python library for traditional ML algorithms.
+
+** Resources
+*** Books
+- "Deep Learning" by Ian Goodfellow
+- "Hands-On Machine Learning" by Aurélien Géron
+
+*** Courses
+- Coursera ML by Andrew Ng
+- Fast.ai Practical Deep Learning
+
+** Future Directions
+*** AGI Research
+Work toward Artificial General Intelligence.
+
+*** AI Safety
+Ensuring AI systems remain beneficial and controllable.
+
+**** Value Alignment
+Matching AI goals with human values.
+
+**** Interpretability
+Understanding AI decision-making processes.
+
+** Conclusion
+The AI Graph theme provides an interactive way to explore complex document structures through visual navigation.
+
+Try clicking nodes in the graph, dragging them around, and using keyboard shortcuts for navigation!
+
+#+BACKLINKS: off
+#+STARTUP: overview
