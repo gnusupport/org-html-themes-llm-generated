@@ -1,0 +1,1152 @@
+/*
+ * Holodeck Theme - Sci-Fi Holographic Interface
+ * Transparent panels, grid patterns, and HUD elements with blue/cyan holographic aesthetic
+ * Left sidebar layout
+ * 
+ * Copyright (C) 2026 Open Source Contributors
+ * Licensed under GPL v3 or later
+ */
+
+/* ==========================================================================
+   CSS Variables - Holodeck Color Palette
+   ========================================================================== */
+
+:root {
+  /* Deep space background */
+  --holo-bg-deep: #001233;              /* Deep space blue */
+  --holo-bg-darker: #000a1f;            /* Darker space */
+  --holo-bg-panel: rgba(0, 20, 50, 0.85); /* Semi-transparent panel */
+  --holo-bg-card: rgba(0, 25, 60, 0.7);  /* Card background */
+  
+  /* Hologram colors */
+  --holo-cyan: #00D4FF;                 /* Primary hologram cyan */
+  --holo-cyan-light: #33DDFF;           /* Lighter cyan */
+  --holo-cyan-dark: #00AACC;            /* Darker cyan */
+  --holo-blue: #0077BE;                 /* Interface blue */
+  --holo-blue-light: #3399CC;           /* Lighter blue */
+  --holo-blue-dark: #005580;            /* Darker blue */
+  --holo-white: #E0F7FF;                /* White with blue tint */
+  --holo-glow: #FFFFFF;                 /* Pure white glow */
+  
+  /* Alert/status colors */
+  --holo-warning: #FFAA00;              /* Warning amber */
+  --holo-danger: #FF3333;               /* Alert red */
+  --holo-success: #00FF66;              /* Success green */
+  
+  /* Typography */
+  --font-heading: 'Orbitron', 'Rajdhani', sans-serif;
+  --font-body: 'Share Tech Mono', 'Courier New', monospace;
+  --font-accent: 'Rajdhani', 'Segoe UI', sans-serif;
+  --font-mono: 'Share Tech Mono', 'Fira Code', monospace;
+  
+  /* Layout */
+  --sidebar-width: 300px;
+  --content-max-width: 1100px;
+  --spacing-unit: 1rem;
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  
+  /* Glow effects */
+  --glow-cyan: 0 0 10px rgba(0, 212, 255, 0.6),
+               0 0 20px rgba(0, 212, 255, 0.3),
+               0 0 30px rgba(0, 212, 255, 0.1);
+  --glow-blue: 0 0 10px rgba(0, 119, 190, 0.5),
+               0 0 20px rgba(0, 119, 190, 0.25);
+  --glow-white: 0 0 8px rgba(255, 255, 255, 0.6),
+                0 0 16px rgba(255, 255, 255, 0.3);
+  
+  /* Shadows */
+  --shadow-panel: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  /* Grid opacity */
+  --grid-opacity: 0.12;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--holo-bg-deep);
+  
+  /* Grid background pattern */
+  background-image: 
+    linear-gradient(
+      rgba(0, 212, 255, var(--grid-opacity)) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 212, 255, var(--grid-opacity)) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 119, 190, 0.15) 0%,
+      transparent 60%
+    );
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  
+  /* Scanline effect overlay */
+  position: relative;
+}
+
+/* Scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.02),
+    rgba(0, 0, 0, 0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 9999;
+}
+
+body {
+  color: var(--holo-white);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.8;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ==========================================================================
+   Layout - Flexbox with Fixed Left Sidebar
+   ========================================================================== */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Fixed Left Sidebar - Holographic TOC
+   ========================================================================== */
+
+#table-of-contents {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  /* Semi-transparent holographic panel */
+  background: var(--holo-bg-panel);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  padding: 2rem 1.5rem;
+  z-index: 1000;
+  
+  /* Holographic border */
+  border-right: 2px solid var(--holo-cyan);
+  box-shadow: 
+    4px 0 25px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 212, 255, 0.2),
+    inset 2px 0 0 rgba(0, 212, 255, 0.1);
+  
+  /* Grid pattern overlay */
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(
+      180deg,
+      rgba(0, 20, 50, 0.9),
+      rgba(0, 15, 40, 0.95)
+    );
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+/* HUD decoration - Top */
+#table-of-contents::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--holo-cyan) 25%,
+    var(--holo-blue) 50%,
+    var(--holo-cyan) 75%,
+    transparent 100%
+  );
+  box-shadow: var(--glow-cyan);
+}
+
+/* Corner HUD elements */
+#table-of-contents::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--holo-cyan);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+#table-of-contents::after::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 1px dashed var(--holo-blue);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Scrollbar styling */
+#table-of-contents::-webkit-scrollbar {
+  width: 6px;
+}
+
+#table-of-contents::-webkit-scrollbar-track {
+  background: rgba(0, 10, 25, 0.5);
+}
+
+#table-of-contents::-webkit-scrollbar-thumb {
+  background: var(--holo-cyan);
+  border-radius: 3px;
+  box-shadow: var(--glow-cyan);
+}
+
+#table-of-contents::-webkit-scrollbar-thumb:hover {
+  background: var(--holo-cyan-light);
+}
+
+/* ==========================================================================
+   Sidebar Header - Holographic
+   ========================================================================== */
+
+#table-of-contents h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 2rem 0;
+  color: var(--holo-cyan-light);
+  text-align: left;
+  padding: 1rem 0;
+  
+  /* Holographic text effect */
+  text-shadow: var(--glow-cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  
+  /* HUD-style border */
+  border-bottom: 2px solid var(--holo-cyan);
+  position: relative;
+}
+
+/* HUD corner decorations */
+#table-of-contents h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 30px;
+  height: 3px;
+  background: var(--holo-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+#table-of-contents h2::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 30px;
+  height: 3px;
+  background: var(--holo-blue);
+  box-shadow: var(--glow-blue);
+}
+
+/* ==========================================================================
+   Sidebar TOC Links
+   ========================================================================== */
+
+#table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+#table-of-contents li {
+  margin: 0.5rem 0;
+  padding: 0.75rem 0.8rem;
+  position: relative;
+  transition: all var(--transition-fast);
+  border-left: 2px solid transparent;
+}
+
+#table-of-contents li:hover {
+  background: rgba(0, 212, 255, 0.1);
+  border-left-color: var(--holo-cyan);
+  transform: translateX(3px);
+  box-shadow: 
+    -3px 0 10px rgba(0, 212, 255, 0.2),
+    inset 1px 0 0 rgba(0, 212, 255, 0.3);
+}
+
+#table-of-contents li::before {
+  content: '►';
+  position: absolute;
+  left: -18px;
+  color: var(--holo-cyan);
+  font-size: 0.6rem;
+  opacity: 0.7;
+  transition: all var(--transition-fast);
+}
+
+#table-of-contents li:hover::before {
+  color: var(--holo-cyan-light);
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+#table-of-contents a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--holo-white);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  transition: all var(--transition-fast);
+  
+  /* Subtle holographic glow */
+  text-shadow: 0 0 2px rgba(0, 212, 255, 0.3);
+}
+
+#table-of-contents a:hover {
+  color: var(--holo-cyan-light);
+  text-shadow: var(--glow-cyan);
+}
+
+#table-of-contents .toctree-wrapper p.caption {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--holo-blue-light);
+  margin: 1.5rem 0 0.75rem 0;
+  padding: 0.5rem 0.8rem;
+  border-top: 1px solid var(--holo-blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+#table-of-contents .toctree-wrapper ul {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* ==========================================================================
+   Main Content Area
+   ========================================================================== */
+
+#content {
+  margin-left: var(--sidebar-width);
+  max-width: var(--content-max-width);
+  padding: 3rem 4rem;
+  flex: 1;
+  
+  /* Subtle holographic glow on content area */
+  position: relative;
+}
+
+#content::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--holo-cyan) 50%,
+    transparent 100%
+  );
+  box-shadow: var(--glow-cyan);
+}
+
+/* ==========================================================================
+   Typography - Holographic Headings
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--holo-white);
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  line-height: 1.3;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: var(--holo-cyan-light);
+  text-shadow: var(--glow-cyan);
+  border-bottom: 3px solid var(--holo-cyan);
+  padding-bottom: 0.75rem;
+  letter-spacing: 3px;
+}
+
+/* HUD corner markers on h1 */
+h1::before,
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  width: 20px;
+  height: 3px;
+  background: var(--holo-blue);
+}
+
+h1::before {
+  left: 0;
+}
+
+h1::after {
+  right: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--holo-cyan);
+  text-shadow: var(--glow-cyan);
+  border-left: 4px solid var(--holo-cyan);
+  padding-left: 1.25rem;
+  letter-spacing: 2px;
+}
+
+/* HUD dot decoration */
+h2::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--holo-cyan);
+  box-shadow: var(--glow-cyan);
+  border-radius: 50%;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--holo-blue-light);
+  text-shadow: var(--glow-blue);
+  border-bottom: 1px solid var(--holo-blue);
+  padding-bottom: 0.5rem;
+  letter-spacing: 1.5px;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: var(--holo-white);
+  font-family: var(--font-accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  color: var(--holo-cyan);
+  font-family: var(--font-accent);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Typography - Body Text
+   ========================================================================== */
+
+p {
+  margin: 0 0 1.5em 0;
+  max-width: 85ch;
+  color: #c8e0f5;
+}
+
+/* Monospace text for code snippets in paragraphs */
+p code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+a {
+  color: var(--holo-cyan-light);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--holo-white);
+  text-shadow: var(--glow-white);
+  border-bottom-color: var(--holo-cyan);
+}
+
+a:visited {
+  color: var(--holo-blue-light);
+}
+
+/* ==========================================================================
+   Holographic Panels & Containers
+   ========================================================================== */
+
+/* Generic panel with holographic styling */
+.panel {
+  background: var(--holo-bg-panel);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  box-shadow: 
+    var(--shadow-panel),
+    inset 0 0 30px rgba(0, 212, 255, 0.05);
+  position: relative;
+}
+
+/* HUD corner markers */
+.panel::before,
+.panel::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--holo-cyan);
+}
+
+.panel::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* ==========================================================================
+   Code Blocks - Terminal Style
+   ========================================================================== */
+
+pre {
+  margin: 1.5em 0;
+  padding: 1.5rem;
+  background: rgba(0, 10, 25, 0.9);
+  border: 1px solid var(--holo-cyan);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 
+    var(--glow-cyan),
+    inset 0 0 2px rgba(0, 212, 255, 0.2);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Terminal header */
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 0.2),
+    rgba(0, 119, 190, 0.1)
+  );
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+code:not(pre code) {
+  background: rgba(0, 212, 255, 0.15);
+  padding: 0.2em 0.5em;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--holo-cyan-light);
+  text-shadow: 0 0 3px rgba(0, 212, 255, 0.3);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #b8e0ff;
+}
+
+/* Code line numbers */
+pre code::before {
+  counter-reset: line;
+}
+
+pre code span.line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2em;
+  margin-right: 1em;
+  color: rgba(0, 212, 255, 0.5);
+  text-align: right;
+}
+
+/* ==========================================================================
+   Tables - HUD Style
+   ========================================================================== */
+
+table {
+  margin: 2em 0;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--holo-cyan);
+  background: var(--holo-bg-panel);
+  backdrop-filter: blur(5px);
+  box-shadow: 
+    var(--shadow-panel),
+    inset 0 0 20px rgba(0, 212, 255, 0.05);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+th {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 212, 255, 0.2),
+    rgba(0, 119, 190, 0.1)
+  );
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--holo-cyan-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: var(--glow-cyan);
+  border-bottom: 2px solid var(--holo-cyan);
+}
+
+tr:hover td {
+  background: rgba(0, 212, 255, 0.1);
+  transition: background var(--transition-fast);
+}
+
+td {
+  color: var(--holo-white);
+}
+
+/* Alternate row styling */
+tr:nth-child(even) td {
+  background: rgba(0, 212, 255, 0.03);
+}
+
+tr:nth-child(even):hover td {
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* ==========================================================================
+   Quote Blocks - Data Stream Style
+   ========================================================================== */
+
+blockquote {
+  margin: 1.5em 0;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--holo-cyan);
+  background: rgba(0, 20, 50, 0.4);
+  position: relative;
+  box-shadow: inset 5px 0 20px rgba(0, 212, 255, 0.1);
+}
+
+blockquote::before {
+  content: '>';
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--holo-cyan);
+  opacity: 0.3;
+  font-family: var(--font-heading);
+}
+
+blockquote p {
+  margin: 0;
+  font-style: normal;
+  color: #b8d0e8;
+}
+
+/* ==========================================================================
+   Org Mode Lists
+   ========================================================================== */
+
+.org-ul, .org-ol {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+.org-ul li {
+  margin: 0.5em 0;
+  position: relative;
+}
+
+.org-ul li::before {
+  content: '▸';
+  color: var(--holo-cyan);
+  position: absolute;
+  left: -1.5em;
+  text-shadow: var(--glow-cyan);
+}
+
+.org-ol {
+  counter-reset: item;
+}
+
+.org-ol li {
+  margin: 0.5em 0;
+  position: relative;
+}
+
+.org-ol li::before {
+  content: counter(item) ".";
+  counter-increment: item;
+  color: var(--holo-blue-light);
+  font-family: var(--font-accent);
+  position: absolute;
+  left: -2em;
+  text-shadow: var(--glow-blue);
+}
+
+/* ==========================================================================
+   Horizontal Rule - Digital Divider
+   ========================================================================== */
+
+hr {
+  margin: 3em 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--holo-cyan) 20%,
+    var(--holo-blue) 50%,
+    var(--holo-cyan) 80%,
+    transparent 100%
+  );
+  box-shadow: var(--glow-cyan);
+  position: relative;
+}
+
+/* Decorative dots along HR */
+hr::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 20px,
+    var(--holo-cyan) 20px,
+    var(--holo-cyan) 22px
+  );
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   Checkbox Lists - Interactive HUD
+   ========================================================================== */
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--holo-cyan);
+  border-radius: 3px;
+  margin-right: 0.75em;
+  cursor: pointer;
+  box-shadow: var(--glow-cyan);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+input[type="checkbox"]:hover {
+  box-shadow: 
+    0 0 10px rgba(0, 212, 255, 0.6),
+    0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+input[type="checkbox"]:checked {
+  background: var(--holo-cyan);
+  border-color: transparent;
+  box-shadow: var(--glow-cyan);
+}
+
+input[type="checkbox"]:checked::before {
+  content: '✓';
+  position: absolute;
+  color: var(--holo-bg-deep);
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Links - Special Styling
+   ========================================================================== */
+
+a.org-link {
+  position: relative;
+}
+
+a.org-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--holo-cyan);
+  box-shadow: var(--glow-cyan);
+  transition: width var(--transition-normal);
+}
+
+a.org-link:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Meta Information
+   ========================================================================== */
+
+.org-meta {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--holo-blue-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Center alignment */
+.org-center {
+  text-align: center;
+  margin: 2em 0;
+}
+
+/* ==========================================================================
+   Images - Holographic Frames
+   ========================================================================== */
+
+.org-center img {
+  border: 2px solid var(--holo-cyan);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 
+    var(--shadow-panel),
+    0 0 20px rgba(0, 212, 255, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.org-center img:hover {
+  box-shadow: 
+    var(--shadow-panel),
+    0 0 30px rgba(0, 212, 255, 0.5),
+    0 0 50px rgba(0, 212, 255, 0.2);
+  transform: scale(1.01);
+}
+
+.figure {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.figure img {
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: var(--border-radius-sm);
+}
+
+.figure-caption {
+  font-family: var(--font-heading);
+  color: var(--holo-cyan);
+  text-shadow: var(--glow-cyan);
+  font-size: 0.9rem;
+  margin-top: 0.75em;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Definition Lists
+   ========================================================================== */
+
+dl {
+  margin: 1.5em 0;
+}
+
+dt {
+  font-family: var(--font-heading);
+  color: var(--holo-blue-light);
+  text-shadow: var(--glow-blue);
+  margin-top: 1em;
+}
+
+dd {
+  margin: 0.5em 0 0 2em;
+  padding-left: 1em;
+  border-left: 2px solid rgba(0, 212, 255, 0.3);
+  color: #b8d0e8;
+}
+
+/* ==========================================================================
+   Footnotes
+   ========================================================================== */
+
+#footnotes {
+  margin-top: 4em;
+  padding-top: 2em;
+  border-top: 2px solid var(--holo-blue);
+}
+
+#footnotes p {
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+  #content {
+    padding: 2rem 2.5rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+  
+  body {
+    flex-direction: column;
+  }
+  
+  #table-of-contents {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 25vh;
+    border-right: none;
+    border-bottom: 3px solid var(--holo-cyan);
+    padding: 1rem;
+  }
+  
+  #table-of-contents::before,
+  #table-of-contents::after {
+    display: none;
+  }
+  
+  #table-of-contents h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ==========================================================================
+   Accessibility - Focus States
+   ========================================================================== */
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--holo-cyan);
+  outline-offset: 2px;
+  box-shadow: var(--glow-cyan);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --holo-bg-panel: rgba(0, 20, 50, 0.95);
+    --holo-cyan: #00FFFF;
+    --holo-blue: #0088CC;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  body::before {
+    display: none;
+  }
+  
+  #table-of-contents {
+    position: static;
+    width: 100%;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+  
+  #content {
+    margin-left: 0;
+  }
+  
+  pre {
+    background: #f5f5f5;
+    border: 1px solid #999;
+    box-shadow: none;
+  }
+  
+  code {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+  }
+  
+  h1, h2, h3 {
+    text-shadow: none;
+  }
+  
+  .panel {
+    border: 1px solid #999;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+/* ==========================================================================
+   Animation Utilities
+   ========================================================================== */
+
+@keyframes hologram-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+  51% { opacity: 0.97; }
+  52% { opacity: 0.94; }
+  53% { opacity: 1; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.holo-flicker {
+  animation: hologram-flicker 4s ease-in-out infinite;
+}
+
+/* End of Holodeck Theme */

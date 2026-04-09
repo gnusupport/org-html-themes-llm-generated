@@ -1,0 +1,150 @@
+#+TITLE: My Baby's First Milestones
+#+AUTHOR: Sarah & Mike Johnson
+#+DATE: [2024-12-19]
+#+STARTUP: overview
+#+OPTIONS: toc:2
+#+SETUPFILE: org/html-theme-baby-local.setup
+
+* 🍼 Feeding Schedule
+  :PROPERTIES:
+  :CATEGORY: Daily Care
+  :END:
+
+** [ ] Morning Feeding
+   SCHEDULED: <2024-12-20 7:00am>
+   
+   - [ ] Bottle preparation
+   - [ ] Temperature check
+   - [ ] Burping after feeding
+   - [ ] Clean bottles
+
+** [X] Night Feeding
+   - [X] Last night's record ✓
+   - [X] Sleep duration: 4 hours ✓
+   - [X] Diaper change ✓
+
+* 📊 Growth Tracker
+  :PROPERTIES:
+  :CATEGORY: Health
+  :END:
+
+| Date       | Weight (lbs) | Height (in) | Diaper Size | Mood   |
+|------------+--------------+-------------+-------------+--------|
+| Oct 15     | 7.2          | 19.5        | Newborn     | 😊     |
+| Nov 15     | 8.5          | 21.0        | Size 1      | 😊     |
+| Dec 15     | 9.8          | 22.5        | Size 1      | 😁     |
+
+* 🎯 Milestone Goals
+  :PROPERTIES:
+  :CATEGORY: Development
+  :END:
+
+** [X] Rolling Over
+   COMPLETED: <2024-11-20>
+   - [x] Front to back ✓
+   - [x] Back to front ✓
+   - [x] Rolls in sleep ✓
+
+** [X] Sitting Up
+   COMPLETED: <2024-12-01>
+   - [x] With support ✓
+   - [x] Without support ✓
+   - [x] For 5+ minutes ✓
+
+** [ ] Crawling
+   PREDICTED: <2025-01-15>
+   - [ ] Rocking on hands and knees
+   - [ ] Moving forward
+   - [ ] Navigation skills
+
+** [ ] First Words
+   PREDICTED: <2025-02-01>
+   - [ ] "Mama"
+   - [ ] "Dada"
+   - [ ] "Hi"
+
+   #+BEGIN_QUOTE
+   "Every baby is a miracle that we didn't make, but get to help shape."
+   #+END_QUOTE
+
+* 🛌 Sleep Patterns
+  :PROPERTIES:
+  :CATEGORY: Daily Care
+  :END:
+
+** TODO Nap Schedule
+   DEADLINE: <2024-12-22>
+   :PROPERTIES:
+   :PRIORITY: A
+   :END:
+
+   - [ ] Morning nap (9:30am - 11:00am)
+   - [ ] Afternoon nap (1:30pm - 3:30pm)
+   - [ ] Early evening wind-down (5:00pm)
+
+** DOING Night Sleep
+   SCHEDULED: <2024-12-20>
+   
+   - [ ] Bedtime routine established
+   - [ ] Sleep environment optimized
+   - [ ] White noise machine on
+
+** NA Sleep Training Methods
+   :PROPERTIES:
+   :KEYWORDS: SLEEP | DEVELOPMENT
+   :END:
+
+* 🎨 Play & Development
+  :PROPERTIES:
+  :CATEGORY: Activities
+  :END:
+
+** [X] Tummy Time
+   - [x] 10 minutes daily ✓
+   - [x] Head lifting improving ✓
+   - [x] Reaching for toys ✓
+
+** [X] Sensory Play
+   - [x] Black & white cards
+   - [x] Soft textured toys
+   - [x] Music & singing
+
+** [ ] Motor Skills
+   - [ ] Grasping toys
+   - [ ] Reaching for objects
+   - [ ] Bringing hands to mouth
+
+   #+BEGIN_SRC javascript
+   // Baby's favorite things
+   const babyFavorites = {
+     toys: ['Rattle', 'Soft Book', 'Musical Mobile'],
+     foods: ['Breast milk', 'Formula'],
+     activities: ['Tummy time', 'Singing', 'Reading']
+   };
+   #+END_SRC
+
+* 🗓️ Upcoming Appointments
+  - TODO Pediatric Checkup |<2025-01-10 Fri>
+  - TODO Vaccination Schedule |<2025-01-15 Wed>
+  - DOING Baby Photography |<2025-01-20 Mon>
+
+* 👨‍👩‍👶 Family Activities
+  - [X] First family photo
+  - [X] Baby shower planning
+  - [ ] Nursery decoration
+  - [ ] Welcome party preparation
+
+* 💕 Special Notes
+  :PROPERTIES:
+  :KEYWORDS: MEMORIES | DEVELOPMENT
+  :END:
+
+- **First Smile**: 6 weeks old 😊
+- **First Laugh**: 3 months old 😂
+- **First Word**: Coming soon! 💬
+- **Favorite Toy**: Soft rattle 🎀
+- **Best Sleep**: 6 hours straight! 😴
+
+#+BEGIN_QUOTE
+  "The smallest feet leave the biggest footprints on your heart."
+#+END_QUOTE

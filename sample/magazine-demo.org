@@ -1,0 +1,169 @@
+* My Amazing Article
+:PROPERTIES:
+:AUTHOR: Jane Developer
+:EMAIL: jane@example.com
+:DATE: April 9, 2024
+:END:
+
+This is a demonstration of the **Magazine** theme - a modern, two-column editorial layout for Org mode HTML exports.
+
+**TODO** This is a TODO item that should appear with a yellow background
+**DONE** This task is completed and shows a green strikethrough style
+
+**STARTED** In progress work appears in orange
+
+#+CAPTION: A beautiful sunset over mountains
+[[file:example.jpg]]
+
+This paragraph demonstrates the elegant typography with Merriweather headings and Inter body text. The justified alignment creates a clean, professional look perfect for articles and documentation.
+
+** Section 1: Getting Started
+
+Here's how easy it is to write beautiful content:
+
+#+BEGIN_SRC emacs-lisp
+(defun hello-world ()
+  "Say hello to the world!"
+  (interactive)
+  (message "Hello, World!"))
+#+END_SRC
+
+You can use *bold* text for emphasis, /italic/ for nuances, and =code= for technical terms.
+
+> This is a beautiful quote that demonstrates the theme's elegant blockquote styling with decorative quotation marks.
+
+** Section 2: Features
+
+Here are some key capabilities:
+
+- Write documentation with ease
+- Create technical articles
+- Build personal blogs
+- Share knowledge beautifully
+
+The Magazine theme includes:
+
+1. Responsive two-column layout
+2. Beautiful typography system
+3. Syntax highlighting for code
+4. Custom TODO/DONE styling
+5. Elegant tables and lists
+6. Print-friendly design
+
+#+BEGIN_QUOTE
+The best code is the code you don't have to write.
+-- Anonymous
+#+END_QUOTE
+
+** Section 3: Advanced Topics
+
+*Lists and Organization*
+
+- First item with important content
+- Second item demonstrating structure
+- Third item showing hierarchy
+
+*Definition Lists*
+
+Programming
+: The art of telling a computer what to do.
+Writing
+: The process of expressing ideas clearly.
+Design
+: The plan before the action.
+
+*Inline Tasks*
+
+#+BEGIN_SRC python
+def process_data(items):
+    """Process a list of items."""
+    results = []
+    for item in items:
+        results.append(transform(item))
+    return results
+#+END_SRC
+
+*Tables*
+
+| Feature | Status | Priority |
+|---------+--------+----------|
+| Layout  | Done   | High     |
+| Colors  | Done   | High     |
+| Typography | Done | High  |
+| Responsive | TODO | Medium |
+
+** Section 4: Code Examples
+
+Here's a Python example with syntax highlighting:
+
+#+BEGIN_SRC python
+class MagazineTheme:
+    """A modern theme for Org HTML exports."""
+    
+    def __init__(self, name="Magazine"):
+        self.name = name
+        self.features = [
+            "Two-column layout",
+            "Beautiful typography",
+            "Responsive design"
+        ]
+    
+    def render(self, content):
+        """Render content with theme styling."""
+        return f"<article class='{self.name}'>{content}</article>"
+#+END_SRC
+
+And JavaScript:
+
+#+BEGIN_SRC javascript
+const theme = {
+  name: 'Magazine',
+  colors: {
+    primary: '#2c3e50',
+    accent: '#e67e22',
+    bg: '#fdf6e3'
+  },
+  fonts: {
+    heading: 'Merriweather',
+    body: 'Inter'
+  }
+};
+#+END_SRC
+
+* Admonitions and Notes
+
+#+BEGIN_QUOTE
+NOTE: This is an important note that uses blue background styling.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+WARNING: Pay attention to this warning with orange styling.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+IMPORTANT: This critical information uses green highlighting.
+#+END_QUOTE
+
+** Section 5: Conclusion
+
+This article demonstrates the Magazine theme's capabilities. The two-column layout keeps navigation accessible while providing comfortable reading widths. The warm color palette creates an inviting atmosphere, and the careful typography ensures excellent readability.
+
+#+CAPTION: Summary of benefits
+| Benefit | Description |
+|---------+-------------|
+| Readability | Comfortable line lengths |
+| Navigation | Sticky sidebar always visible |
+| Aesthetics | Modern, professional appearance |
+| Print | Optimized for paper output |
+
+**TODO** Create more content sections
+**DONE** Write introduction section
+**WAIT** Add more code examples
+
+* Appendix: Technical Details
+
+The Magazine theme uses CSS Grid for layout and CSS Variables for easy customization. All styling follows modern web standards and includes comprehensive print media queries.
+
+#+BEGIN_QUOTE
+For more information, visit the theme documentation.
+#+END_QUOTE

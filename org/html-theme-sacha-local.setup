@@ -1,0 +1,8 @@
+# -*- mode: org; -*-
+;; Lexical binding is essential for this theme configuration
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kalam:wght@300;400;500&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/sacha_theme/css/sacha.css"/>

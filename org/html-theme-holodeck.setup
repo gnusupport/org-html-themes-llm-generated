@@ -1,0 +1,8 @@
+# -*- mode: org; -*-
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/holodeck_theme/css/holodeck.css"/>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/org-keyboard-shortcuts.js"></script>

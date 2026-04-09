@@ -1,0 +1,37 @@
+# -*- mode: org; -*-
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Lato:wght@400;400i;700;700i&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/french_bistro_theme/css/french_bistro.css"/>
+#+HTML_HEAD: <script type="text/javascript" src="src/lib/js/org-keyboard-shortcuts.js"></script>
+#+HTML_HEAD: <script type="text/javascript">
+#+HTML_HEAD: //<![CDATA[
+#+HTML_HEAD: document.addEventListener('DOMContentLoaded', function() {
+  var toc = document.getElementById('table-of-contents');
+  var toggle = document.getElementById('toc-toggle');
+  
+  if (toc && toggle) {
+    toggle.addEventListener('click', function() {
+      toc.classList.toggle('collapsed');
+      this.classList.toggle('collapsed');
+      var span = this.querySelector('span');
+      if (toc.classList.contains('collapsed')) {
+        span.textContent = '▼';
+      } else {
+        span.textContent = '▲';
+      }
+    });
+    
+    // Initialize toggle icon
+    var span = toggle.querySelector('span');
+    if (!span) {
+      var newSpan = document.createElement('span');
+      newSpan.textContent = '▼';
+      toggle.appendChild(newSpan);
+    }
+  }
+});
+#+HTML_HEAD: //]]>
+#+HTML_HEAD: </script>

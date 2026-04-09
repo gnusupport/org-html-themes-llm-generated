@@ -1,0 +1,83 @@
+#+TITLE: French Bistro Left - Demo
+#+AUTHOR: Chef Pierre
+#+DESCRIPTION: French bistro with left sidebar layout
+#+SETUPFILE: ../org/html-theme-french_bistro_left-local.setup
+
+* Welcome to La Café Documentation (Sidebar)
+** Introduction
+This demo shows the French Bistro theme with a fixed left sidebar TOC.
+
+** Navigation
+*** Sections
+**** Getting Started
+**** Recipes
+**** Techniques
+**** Equipment
+
+*** Resources
+**** Wine Pairings
+**** Chef Bios
+**** Gallery
+
+** Content
+*** Getting Started
+Welcome to our culinary documentation!
+
+The left sidebar provides easy navigation between sections.
+
+**** Example Code
+#+BEGIN_SRC python
+def prepare_dish(ingredients):
+    """Prepare a dish with given ingredients."""
+    return f"Cooking with {len(ingredients)} ingredients"
+#+END_SRC
+
+*** Recipes
+**** Coq au Vin
+Classic French chicken dish.
+
+- 1 whole chicken
+- 1 bottle red wine
+- 8 oz bacon
+- 12 oz mushrooms
+
+**** Bouillabaisse
+Provençal fish stew.
+
+- 2 lbs mixed fish
+- 1 cup saffron
+- 4 tomatoes
+- 6 garlic cloves
+
+*** Techniques
+**** Searing
+High heat to seal in flavors.
+
+**** Deglazing
+Use wine to lift fond from pan.
+
+*** Equipment
+Essential kitchen tools:
+
+| Tool              | Use                  |
+|-------------------+----------------------|
+| Dutch Oven        | Braising, stews      |
+| Chef's Knife      | Precision cutting    |
+| Whisk             | Emulsions, sauces    |
+| Thermometer       | Temperature control  |
+
+** Tips and Tricks
+*** Wine Pairings
+- Red wine: Coq au Vin, Boeuf Bourguignon
+- White wine: Bouillabaisse, Escargots
+- Champagne: Aperitifs, desserts
+
+*** Chef's Notes
+> "The secret to French cooking is quality ingredients and patience."
+> -- Chef Pierre
+
+** Gallery
+[[file:../test.org][Photos and Images]]
+
+** Conclusion
+Enjoy your culinary journey with the French Bistro sidebar theme!

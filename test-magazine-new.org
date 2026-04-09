@@ -1,0 +1,87 @@
+#+TITLE: Life Operating System 2024
+#+AUTHOR: Your Name
+#+DATE: [2024-05-20]
+#+STARTUP: overview
+#+OPTIONS: toc:2
+#+SETUPFILE: /home/data1/protected/Programming/git/org-html-themes/org/html-theme-magazine-local.setup
+
+* 📅 Daily Dashboard
+  :PROPERTIES:
+  :CATEGORY: Daily
+  :END:
+  
+  - [ ] Check emails                                    # Morning routine
+  - [ ] Review today's calendar                        # Morning routine
+  - [ ] Drink 2L of water                              # Health
+  - [ ] Meditate for 10 mins                          # Mindset
+
+  ** ☀️ Morning Journal
+    - *Mood:* Energized
+    - *Focus for today:* Complete the project proposal.
+    - *Gratitude:* I am grateful for a fast computer and coffee.
+
+* 🛠️ Active Projects
+  :PROPERTIES:
+  :CATEGORY: Work
+  :END:
+
+** Project: Website Redesign :WORK:PROJECT:
+   SCHEDULED: <2024-05-21 Mon>
+   DEADLINE: <2024-06-01 Sat>
+   Effort: 20h
+
+   - [X] Research competitors
+   - [ ] Create wireframes
+     - /Note: Focus on mobile-first design/
+   - [ ] Client feedback loop
+   - [ ] Final deployment
+
+   #+BEGIN_QUOTE
+   "Design is not just what it looks like and feels like. Design is how it works." — Steve Jobs
+   #+END_QUOTE
+
+** Project: Learn Emacs Lisp :STUDY:
+   :LOGBOOK:
+   CLOCK: [202405191000-202405191130]
+   :END:
+   - [ ] Read "An Introduction to Programming in Emacs Lisp"
+   - [ ] Build a custom Org-mode capture template
+   - [ ] Understand hooks and buffers
+
+* 📚 Knowledge Base (Zettelkasten)
+  :PROPERTIES:
+  :CATEGORY: Notes
+  :END:
+
+** 🧠 Cognitive Science
+   - *Spaced Repetition:* The technique of increasing intervals between reviews.
+   - *Active Recall:* Testing yourself rather than re-reading.
+   - [[https://wikipedia.org/wiki/Learning][Link to Wiki]]
+
+** 💻 Programming Tips
+   *** Python List Comprehensions
+   #+BEGIN_SRC python
+   # This is a sample code block
+   numbers = [1, 2, 3, 4, 5]
+   squares = [n**2 for n in numbers if n % 2 == 0]
+   print(squares) # Output: [4, 16]
+   #+END_SRC
+
+* 🛒 Shopping & Errands
+  :PROPERTIES:
+  :CATEGORY: Personal
+  :END:
+
+- [ ] Buy Almond Milk
+- [ ] Pick up dry cleaning
+- [ ] Order new mechanical keyboard switches
+
+* 🗓️ Calendar & Deadlines
+  - TODO Submit Tax Returns                      |<2024-04-15 Mon>
+  - TODO Dentist Appointment                     |<2024-05-25 Sat>
+  - TODO Renew Passport                          |<2024-07-10 Tue>
+
+* 📥 Inbox / Scratchpad
+  (Quickly dump thoughts here and organize them later using =C-c C-w= or =M-x org-refile=)
+  - Idea: Start a podcast about productivity.
+  - Remember to call Mom on Sunday.

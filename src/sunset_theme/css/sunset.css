@@ -1,0 +1,208 @@
+/* sunset.css --- Sunset CSS file */
+
+/* Copyright (C) 2024. All rights reserved. */
+/* Warm oranges and soft purples */
+
+html, body { border: 0; margin: 0; padding: 0; }
+
+@media print { .dontprint { display: none; } }
+
+#preamble {
+    background: linear-gradient(135deg, #2d1b4e 0%, #8e44ad 50%, #e67e22 100%);
+    color: #f5e6d3;
+    font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+    font-size: 70%;
+    font-weight: bold;
+    height: 180px;
+    padding: 2px 2px 0 6px;
+}
+
+#banner { text-align: center; }
+
+#tabs {
+    background: linear-gradient(135deg, #8e44ad 0%, #e67e22 100%);
+    float: left;
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 100%;
+}
+
+#tabs ul { margin: 0; padding: 0; }
+#tabs li { float: left; list-style-type: none; margin: 0 2px 0 0; padding: 0; white-space: nowrap; }
+#tabs li a { color: #f5e6d3; display: block; font-size: 13px; font-weight: bold; margin: 0; padding: 4px 10px; text-decoration: none; }
+#tabs li a:hover { background: #2d1b4e; color: #f5e6d3; }
+#tabs li.ui-tabs-active a { background: #2d1b4e; color: #f5e6d3; }
+
+#content {
+    clear: both;
+    background: linear-gradient(to bottom, #fff5f5 0%, #fef9f7 100%);
+    font-size: 100%;
+    margin: 0 auto;
+    max-width: 810px;
+    overflow-x: hidden;
+    padding: 0 10px 2px;
+}
+
+#postamble {
+    color: #8e44ad;
+    font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+    font-size: 70%;
+    height: 40px;
+    margin: 0 auto;
+    max-width: 810px;
+    padding: 2px 2px 0 6px;
+    text-align: right;
+    background: linear-gradient(to top, #fff5f5 0%, transparent 100%);
+}
+
+body { color: #4a3728; font: 14px/1.5 'Nunito Sans', 'Segoe UI', sans-serif; margin: 0 .1em; padding: 0; }
+b { color: #2d1b4e; }
+i { color: #6d597a; }
+
+h1, h2, h3, h4, h5 { font-family: 'Nunito Sans', 'Segoe UI', sans-serif; }
+
+h1 { background: linear-gradient(135deg, #8e44ad 0%, #e67e22 100%); color: #ffffff; font-size: 24px; margin: 0; padding: 9px 0 0 10px; }
+h2 { border-bottom: 2px solid #e67e22; color: #9b59b6; font-size: 20px; }
+h3, h4, h5, h6 { color: #9b59b6; }
+
+h3 { border-bottom: 1px solid #e8daef; font-size: 16px; margin-left: 25px; }
+h4 { border-bottom: 1px dotted #e8daef; font-size: 14px; margin-left: 60px; }
+h5 { font-size: 1em; margin-left: 87px; }
+h6 { font-size: 1em; margin-left: 100px; }
+
+.outline-text-2, .outline-text-3, .outline-text-4, .outline-text-5, #text-footnotes { margin-left: 100px; }
+li > .outline-text-5 { margin-left: 20px; }
+ul, ol { padding-left: 1.5em; }
+
+dt { color: #9b59b6; font-weight: bold; }
+dd { margin-bottom: 6px; }
+
+pre {
+    background-color: #f9f1f4;
+    border: 1px solid #e67e22;
+    color: #d35400;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    line-height: 1.3em;
+    overflow: auto;
+    padding: 10px;
+}
+
+code {
+    background-color: #f9f1f4;
+    border: 1px solid #e67e22;
+    color: #d35400;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    margin: 0 1px;
+    padding: 0 2px;
+}
+
+li > p, li > ul, li > .inlinetask, li > dl { margin-left: 0; }
+dd > p, dd > ul, dd > .inlinetask, dd > dl { margin-left: 0; }
+
+a, a:link, a:visited { color: #8e44ad; text-decoration: none; }
+a:hover { text-decoration: underline; color: #e67e22; }
+a:focus { outline: none; }
+
+table { border-collapse: collapse; margin: 0 auto; }
+table td { padding: 3px 5px; }
+table, th, td { border: 1px solid #e67e22; }
+th { background: linear-gradient(135deg, #8e44ad 0%, #e67e22 100%); color: #ffffff; border: 1px solid #e67e22; }
+caption { color: #6d597a; }
+
+img { display: block; margin: 0 auto; text-align: center; }
+.figure { color: #6d597a; text-align: center; }
+
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+.justify { text-align: justify; }
+
+.inlinetask {
+    background-color: #f9f1f4;
+    border-color: #e67e22 #e67e22 #e67e22 #8e44ad;
+    border-style: solid;
+    border-width: 1px 1px 1px 6px;
+    padding: 8px 8px 0;
+    margin: 10px 0;
+}
+.inlinetask td { padding: 2px 5px 0 2px; border: 0; }
+
+.todo, .done { margin: 10px 0; padding: 0 2px; }
+
+.NEW { background-color: #f9f1f4; border: 1px solid #e67e22; color: #8e44ad; font-weight: normal; }
+.TODO { background-color: #fadbd8; border: 1px solid #e74c3c; color: #c0392b; }
+.STRT, .STARTED { background-color: #fdebd0; border: 1px solid #d35400; color: #d35400; }
+.WAIT, .WAITING, .DLGT, .DELEGATED { background-color: #d5f5e3; border: 1px solid #27ae60; color: #1e8449; }
+.SDAY, .SOMEDAY, .DFRD, .DEFERRED { background-color: #ebdef0; border: 1px solid #a569bd; color: #8e44ad; }
+.DONE, .CANX, .CANCELED { background-color: #d1ccc0; border: 1px solid #8d7968; color: #6f5e53; }
+
+.tag span {
+    background-color: #f9f1f4;
+    border: 1px solid #e67e22;
+    color: #8e44ad;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 80%;
+    margin: 0 3px;
+    padding: 1px 2px;
+    border-radius: 10px;
+}
+.tag span:hover { background: #8e44ad; color: #ffffff; }
+.tag .FLAGGED { background-color: #fadbd8; border-color: #e74c3c; color: #c0392b; }
+.tag .selected { background-color: #fdebd0; border-color: #d35400; color: #d35400; }
+#listOfTags .tag span { display: inline; float: none; }
+
+span.todo { cursor: pointer; margin: -1px 3px 0 0; }
+span.todo:hover { background: #8e44ad; color: #ffffff; }
+span.todo .selected { background-color: #fdebd0; border-color: #d35400; color: #d35400; }
+
+.timestamp-kwd { background-color: #f9f1f4; color: #8e44ad; margin: 0 4px 0 0; padding: 2px 0 2px 2px; }
+.timestamp { color: #6d597a; font-size: 80%; }
+
+#table-of-contents {
+    background: linear-gradient(to bottom, #ffffff 0%, #fff5f5 100%);
+    border: 1px solid #e67e22;
+    display: table;
+    line-height: 1.2em;
+    padding: 4px;
+    margin: 4px;
+    max-width: 400px;
+    float: right;
+    width: auto;
+}
+#table-of-contents h2 { display: none; }
+#table-of-contents ul { margin: 0; padding: 0; }
+#table-of-contents li { list-style-type: none; margin: 0; }
+#table-of-contents li li { margin-left: 1.5em; }
+#table-of-contents li li li { font-size: 0.8em; }
+#table-of-contents a { color: #8e44ad; font-size: 0.9em; text-decoration: none; }
+#table-of-contents a:hover { color: #e67e22; text-decoration: underline; }
+
+p.verse { color: #6d597a; font-style: italic; }
+.example { background-color: #f9f1f4; border: 1px solid #d35400; color: #d35400; }
+.alert { font-weight: bold; color: #c0392b; }
+
+#toTop {
+    background: #8e44ad;
+    border: 1px solid #e67e22;
+    top: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11px;
+    padding: 5px;
+    position: fixed;
+    right: 10px;
+    text-align: center;
+    width: 100px;
+    z-index: 999;
+}
+#toTop:hover { background: #2d1b4e; color: #ffffff; }
+
+.org-src-container { position: relative; }
+
+/* Local Variables: */
+/* eval: (when (locate-library "rainbow-mode") (require 'rainbow-mode) (rainbow-mode)) */
+/* End: */

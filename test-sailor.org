@@ -1,0 +1,119 @@
+#+TITLE: The Navigator's Log
+#+AUTHOR: Captain Elizabeth Mariner
+#+DATE: [2024-12-19]
+#+STARTUP: overview
+#+OPTIONS: toc:2
+#+SETUPFILE: org/html-theme-sailor-local.setup
+
+* 🧭 Today's Voyage
+  :PROPERTIES:
+  :CATEGORY: Navigation
+  :END:
+
+** [ ] Departure Checklist
+   SCHEDULED: <2024-12-20>
+   
+   - [ ] Check weather forecast
+   - [ ] Verify compass calibration
+   - [ ] Inspect vessel systems
+   - [ ] Brief crew members
+
+   #+BEGIN_QUOTE
+   "A smooth sea never made a skilled sailor."
+   #+END_QUOTE
+
+** [X] Port Preparation
+   - [X] Fuel tanks full ✓
+   - [X] Provisions stocked ✓
+   - [X] Navigation charts updated ✓
+
+* 📋 Crew Assignments
+  :PROPERTIES:
+  :CATEGORY: Personnel
+  :END:
+
+| Crew Member     | Rank          | Status   | Duty      |
+|-----------------+---------------+----------+-----------|
+| J. Hawkins      | Captain       | Active   | Command   |
+| W. Sparrow      | First Mate    | Active   | Navigation|
+| T. Turner       | Quartermaster | Active   | Supplies  |
+| H. Gibbs        | Navigator     | Active   | Charts    |
+
+* 🗺️ Route Planning
+  :PROPERTIES:
+  :CATEGORY: Planning
+  :END:
+
+** TODO Caribbean Passage
+   DEADLINE: <2024-12-28>
+   :PROPERTIES:
+   :PRIORITY: A
+   :END:
+
+   - [X] Plot primary route
+   - [X] Identify safe harbors
+   - [ ] Check maritime weather patterns
+   - [ ] File flight plan
+
+** DOING Atlantic Crossing
+   SCHEDULED: <2024-12-22>
+
+** NA Maintenance Schedule
+   :PROPERTIES:
+   :KEYWORDS: VOYAGE | LOGISTICS
+   :END:
+
+* 🛠️ Vessel Maintenance
+  :PROPERTIES:
+  :CATEGORY: Operations
+  :END:
+
+** [X] Engine Inspection
+   - [X] Oil change completed
+   - [X] Filter replacement done
+   - [X] Coolant system checked
+
+** [X] Hull Inspection
+   - [X] No leaks detected
+   - [X] Anti-fouling applied
+   - [X] Propeller clean
+
+** [X] Safety Equipment
+   - [X] Life jackets inspected
+   - [X] Fire extinguishers charged
+   - [X] Flares within date
+
+   #+BEGIN_SRC python
+   # Vessel status monitoring
+   vessel_status = {
+       'fuel_level': 85,
+       'water_level': 90,
+       'engine_temp': 'normal',
+       'speed': 12.5
+   }
+   #+END_SRC
+
+* 📅 Upcoming Voyages
+  - TODO Bahamas Expedition |<2025-01-05 Sun>
+  - TODO Caribbean Cruise |<2025-01-15 Wed>
+  - DOING Atlantic Survey |<2025-01-22 Mon>
+
+* 🧭 Navigation Notes
+  - [X] Updated nautical charts
+  - [X] Calibrated GPS systems
+  - [ ] Review tide schedules
+  - [ ] Check harbor restrictions
+
+* ⚓ Equipment Inventory
+  :PROPERTIES:
+  :KEYWORDS: SUPPLIES | LOGISTICS
+  :END:
+
+- **Compass**: Calibrated and functional
+- **Binoculars**: In good condition
+- **Ropes**: All secured and inspected
+- **Sails**: Clean and ready
+
+#+BEGIN_QUOTE
+  "The sea, once it casts its spell, holds one in its net of wonder forever."
+#+END_QUOTE

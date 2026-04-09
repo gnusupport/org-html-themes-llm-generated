@@ -1,0 +1,274 @@
+#+TITLE: Sacha-Left Theme Test - Hand-Drawn Aesthetic with Left Sidebar TOC
+#+AUTHOR: Test Author
+#+EMAIL: test@example.com
+#+DATE: [2024-01-15 Mon]
+#+STARTUP: overview content hidestars
+#+OPTIONS: toc:3 num:t
+#+LANGUAGE: en
+#+SETUPFILE: ../org/html-theme-sacha_left-local.setup
+
+* Welcome to the Sacha-Left Theme
+
+This demonstrates the hand-drawn, friendly aesthetic with a fixed left sidebar table of contents.
+The TOC is always visible on the left at 300px width.
+
+:PROPERTIES:
+:RATING: ★★★★★
+:PREP_TIME: 5 min
+:END:
+
+** ✽ Features Overview
+
+Here's what makes this theme special:
+
+- Warm paper-like background (#faf7f2)
+- Handwriting fonts for headings and accents
+- Fixed left sidebar with scrollable TOC
+- Dotted/wavy link underlines
+- Irregular borders for organic feel
+- Custom list markers with pencil-style dots
+- Code blocks with sepia backgrounds
+- Responsive design (sidebar collapses on mobile)
+
+** ✽ Typography Tests
+
+*** Handwriting Font (Headings)
+
+This heading uses the Kalam handwriting font.
+
+**** Another Level
+
+Even deeper nesting uses the same friendly style.
+
+***** Deeper Still
+
+Three levels deep and still looking great!
+
+*** Body Text
+
+This is regular body text using Inter font for readability. It contrasts nicely with the handwriting headings.
+
+** ✽ Links and Navigation
+
+Here's a [[https://example.com][sample link]] with a dotted underline. When you hover over it, the underline becomes wavy.
+
+Another [[file:test-sacha_left.org][file link]] and [[id:some-id][ID link]].
+
+** ✽ Code Examples
+
+*** Inline Code
+
+Use =code= for inline snippets and =emacs-lisp= for language hints.
+
+*** Code Blocks
+
+#+BEGIN_SRC emacs-lisp :results output
+(defun hello-world ()
+  "Say hello in the friendliest way."
+  (message "Hello, World!"))
+
+(hello-world)
+#+END_SRC
+
+#+RESULTS:
+: Hello, World!
+
+*** Shell Commands
+
+#+BEGIN_SRC shell :results output
+echo "Hello from shell!"
+echo "This looks great in monospace font."
+#+END_SRC
+
+#+RESULTS:
+: Hello from shell!
+: This looks great in monospace font.
+
+** ✽ Lists and Tasks
+
+*** Unordered Lists
+
+- First item with custom bullet
+- Second item
+  - Nested item with dashed marker
+  - Another nested item
+- Third item
+
+*** Task Lists
+
+- [ ] TODO Item to do
+- [X] DONE Completed item
+- [ ] CANCELLED Cancelled item
+- [ ] WAITING Waiting on someone
+
+*** Keyword Lists
+
+#+BEGIN_QUOTE
+Keywords in Org mode:
+- :ACTIVE: Current projects
+- :ARCHIVE: Archived tasks
+- :NEXT: Next actions
+#+END_QUOTE
+
+** ✽ Blockquotes and Asides
+
+#+BEGIN_QUOTE
+"The best way to predict the future is to invent it."
+- Alan Kay
+
+This quote has a warm accent border and italic text.
+#+END_QUOTE
+
+#+BEGIN_ASIDE
+This aside box provides extra context or notes in a styled container.
+#+END_ASIDE
+
+** ✽ Tables
+
+| Feature | Status | Priority |
+|---------|--------|----------|
+| Font    | ✅     | High     |
+| Colors  | ✅     | High     |
+| Borders | ✅     | Medium   |
+| Code    | ✅     | High     |
+
+** ✽ Admonitions
+
+#+BEGIN_NOTE
+This is a note - useful for general information with a blue tint.
+#+END_NOTE
+
+#+BEGIN_TIP
+This is a tip - great for helpful hints with a green tint.
+#+END_TIP
+
+#+BEGIN_WARNING
+This is a warning - use orange to draw attention to important info.
+#+END_WARNING
+
+#+BEGIN_DANGER
+This is a danger box - red for critical alerts or important warnings.
+#+END_DANGER
+
+** ✽ Definition Lists
+
+Spaced Repetition :: Learning technique with increasing intervals
+Active Recall :: Testing yourself rather than re-reading
+Forgetting Curve :: Exponential loss of information over time
+
+** ✽ Center and Example Blocks
+
+#+BEGIN_CENTER
+This text is centered with a special style.
+It's perfect for quotes or important messages.
+#+END_CENTER
+
+#+BEGIN_EXAMPLE
+This example block has a dashed border.
+It's great for showing formatted text that shouldn't be styled.
+Line 2 of the example
+Line 3 continues here
+#+END_EXAMPLE
+
+#+BEGIN_QUOTE
+This quote block has a solid border.
+Different from the center and example styles.
+#+END_QUOTE
+
+** ✽ Footnotes
+
+Here's some text with a footnote reference.[fn:1]
+
+And another sentence with [[fn:2][another footnote]].
+
+[fn:1] This is the first footnote explaining something important.
+
+[fn:2] The second footnote provides additional context.
+
+** ✽ Tags
+
+Here's a =tagged= item with =:work:= and =:personal:= tags visible.
+
+** ✽ Verbatim and Math
+
+Verbatim text: @verbatim@example@
+
+Math expression: \(E = mc^2\)
+
+** ✽ Verse
+
+#+BEGIN_VERSE
+Roses are red,
+Violets are blue,
+Code compiles fine,
+And so do you!
+#+END_VERSE
+
+** ✽ Custom Metadata Display
+
+Since Org properties don't export to HTML by default, here's how we display metadata using custom formatting:
+
+#+BEGIN_QUOTE
+:RATING: ★★★★★
+:PREP_TIME: 5 min
+:CATEGORY: Testing
+#+END_QUOTE
+
+** ✽ Timestamps
+
+The document was created on [[file:test-sacha_left.org][2024-01-15 Mon]].
+
+** ✽ Signatures
+
+#+BEGIN_HTML
+<div class="signature">
+  ~Test Author~
+</div>
+#+END_HTML
+
+** ✽ Horizontal Rules
+
+----
+
+This is a doodle-style horizontal rule with an asterisk divider.
+
+** ✽ More Typography
+
+*Strong text* and _italic text_ and ~verbatim text~.
+
+=Code= looks great in the monospace font.
+
+** ✽ Link Styles
+
+- Regular link: [[https://sachachua.com][Sacha Chua's blog]]
+- File link: [[file:test-sacha_left.org][this test file]]
+- ID link: [[id:welcome-to-sacha-left-theme][heading with ID]]
+
+** ✽ Mobile Responsiveness
+
+This theme is fully responsive. Try resizing your browser window - the sidebar collapses on screens smaller than 768px.
+
+On small screens:
+- Sidebar moves to top as a horizontal section
+- Content takes full width
+- Font sizes scale appropriately
+
+** ✽ Summary
+
+The Sacha-Left theme provides:
+
+1. Friendly, hand-drawn aesthetic
+2. Warm, paper-like colors
+3. Fixed left sidebar for navigation
+4. Readable typography with good contrast
+5. Comprehensive Org mode element support
+6. Mobile responsive design
+
+*That's all for now!*
+
+#+BEGIN_HTML
+<div class="signature">
+  ~Warm regards,~<br/>
+  ~The Sacha-Left Theme~
+</div>
+#+END_HTML

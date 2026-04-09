@@ -1,0 +1,9 @@
+# -*- mode: org; -*-
+;; Lexical binding is essential for this theme configuration
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;600;700;800&family=Crimson+Text:wght@400;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/cyber_renaissance_left_theme/css/cyber-renaissance-left.css"/>
+#+HTML_HEAD: <script type="text/javascript" src="../src/lib/js/org-keyboard-shortcuts.js"></script>

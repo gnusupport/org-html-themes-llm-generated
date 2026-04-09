@@ -1,0 +1,241 @@
+#+TITLE: Aurora Plain Theme - Test Document
+#+AUTHOR: Aurora Explorer
+#+DATE: [2024-12-19]
+#+STARTUP: overview
+#+OPTIONS: toc:2
+#+SETUPFILE: org/html-theme-aurora_plain-local.setup
+
+* 🌌 Aurora Flowing Lights
+:PROPERTIES:
+:CATEGORY: Aurora Themes
+:END:
+
+Welcome to the Aurora Plain theme - a minimal, sidebar-free design featuring flowing aurora colors and soft gradients.
+
+** [ ] Explore the aurora effects :TODO:
+   SCHEDULED: <2024-12-20>
+   DEADLINE: <2024-12-25>
+   
+   - [ ] Observe the gradient background animation
+   - [ ] Notice the aurora text effect on the title
+   - [ ] Check the soft glow effects on TODO items
+   - [ ] Review the flowing border on code blocks
+
+   #+BEGIN_QUOTE
+   "The aurora dances across the digital sky, painting code in colors of the north."
+   #+END_QUOTE
+
+** [X] Test typography :TODO:
+   - [X] Orbitron headings with gradient text
+   - [X] Exo 2 body font
+   - [X] Fira Code monospace
+
+** [X] Verify minimal design :TODO:
+   - [X] No sidebar present
+   - [X] Centered content layout
+   - [X] Clean, spacious design
+
+* 🎨 Aurora Color Palette
+:PROPERTIES:
+:CATEGORY: Design
+:END:
+
+The aurora aesthetic uses a deep gradient background with flowing accent colors:
+
+** Cyan Lights**
+- Color: #00D4FF
+- Used for: Links, timestamps, H3 headers, code syntax
+
+** Purple Aurora**
+- Color: #9D4EDD
+- Used for: Section headers, keywords, strings in code
+
+** Pink Northern Lights**
+- Color: #FF006E
+- Used for: Active tasks, quotes, block borders
+
+* 📝 Task Management
+:PROPERTIES:
+:CATEGORY: Tasks
+:END:
+
+This section demonstrates how TODO items appear with aurora styling:
+
+** TODO Plan aurora photography trip**
+   SCHEDULED: <2024-12-21 Fri>
+   DEADLINE: <2024-12-30 Sun>
+   
+   - [ ] Research best locations
+   - [ ] Check weather forecasts
+   - [ ] Prepare camera equipment
+   - [ ] Plan travel logistics
+
+** DOING Configure theme settings**
+   The purple glow animation pulses on active tasks.
+
+** DONE Set up development environment**
+   Completed with cyan styling.
+
+** NEXT Review color contrast ratios**
+   Ensuring WCAG AA compliance.
+
+** NA Document theme limitations**
+   Not currently in scope.
+
+* 💻 Code Examples
+:PROPERTIES:
+:CATEGORY: Development
+:END:
+
+Code blocks feature aurora-colored syntax highlighting with flowing top borders.
+
+** JavaScript Example**
+#+BEGIN_SRC javascript
+// Aurora gradient configuration
+const auroraColors = {
+  deep: '#0F0C29',
+  mid: '#302B63',
+  light: '#24243E',
+  cyan: '#00D4FF',
+  purple: '#9D4EDD',
+  pink: '#FF006E'
+};
+
+function createAuroraGradient(element) {
+  const gradient = `linear-gradient(135deg, 
+    ${auroraColors.deep} 0%, 
+    ${auroraColors.mid} 40%, 
+    ${auroraColors.light} 80%)`;
+  
+  element.style.background = gradient;
+  element.style.backgroundSize = '400% 400%';
+  element.style.animation = 'aurora-flow 15s ease infinite';
+}
+#+END_SRC
+
+** Python Example**
+#+BEGIN_SRC python
+"""
+Aurora Plain Theme - CSS Configuration
+Minimal design with flowing lights aesthetic
+"""
+
+from dataclasses import dataclass
+from typing import List
+
+@dataclass
+class AuroraPalette:
+    """Aurora color palette"""
+    background_deep: str = "#0F0C29"
+    background_mid: str = "#302B63"
+    background_light: str = "#24243E"
+    cyan: str = "#00D4FF"
+    purple: str = "#9D4EDD"
+    pink: str = "#FF006E"
+    
+    def to_css_gradient(self) -> str:
+        """Generate CSS gradient string"""
+        return f"linear-gradient(135deg, {self.background_deep} 0%, {self.background_mid} 40%, {self.background_light} 100%)"
+
+# Create aurora theme instance
+theme = AuroraPalette()
+print(f"Background: {theme.to_css_gradient()}")
+#+END_SRC
+
+* 📊 Data Tables
+:PROPERTIES:
+:CATEGORY: Tables
+:END:
+
+Tables feature aurora gradient headers with smooth hover effects.
+
+| Feature | Status | Color | Animation |
+|---------+--------+-------+-----------|
+| Gradient BG | ✅ | Aurora flow | 15s loop |
+| Text Glow | ✅ | Purple/Cyan | Pulse effect |
+| Code Borders | ✅ | Flowing | 3s animation |
+| Sidebar | ❌ | Minimal | None |
+| Responsive | ✅ | Mobile-first | Breakpoints |
+
+* 🎯 Progress Tracking
+:PROPERTIES:
+:CATEGORY: Projects
+:END:
+
+** TODO Aurora Theme Development**
+   :PROPERTIES:
+   :PRIORITY: A
+   :END:
+   
+   SCHEDULED: <2024-12-19>
+   
+   - [X] Create plain theme CSS
+   - [X] Implement gradient backgrounds
+   - [X] Add flowing animations
+   - [ ] Create sidebar variant
+   - [ ] Add test documents
+   - [ ] Write documentation
+
+** DOING Test accessibility**
+   Checking contrast ratios for WCAG AA compliance.
+
+* 📅 Timeline
+:PROPERTIES:
+:CATEGORY: Schedule
+:END:
+
+- TODO Review aurora color theory |<2024-12-21>
+- TODO Complete plain theme |<2024-12-22>
+- DOING Build sidebar theme |<2024-12-23>
+- TODO Test all themes |<2024-12-24>
+- DONE Initial planning |<2024-12-19>
+
+* 📋 Notes
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+** About the Design**
+
+The Aurora Plain theme captures the ethereal beauty of northern lights in a digital format. The flowing gradient background creates a sense of movement, while the carefully chosen color palette evokes the mystical aurora borealis.
+
+** Key Features **
+- Minimal design without sidebar
+- Flowing gradient background animation
+- Aurora-gradient text for headings
+- Soft glow effects on interactive elements
+- Responsive layout for all screen sizes
+
+** Fonts Used **
+- Headings: Orbitron (futuristic sans-serif)
+- Body: Exo 2 (tech-inspired readable font)
+- Code: Fira Code (programmer-friendly monospace)
+
+* 🔬 Technical Details
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+** CSS Structure **
+The theme uses CSS custom properties (variables) for consistent theming. All colors, spacing, and effects are centralized for easy customization.
+
+** Animations **
+- Background gradient flows over 15 seconds
+- Text gradient animation on H1 (4s infinite)
+- Line glow animation under title (3s ease-in-out)
+- TODO task pulse effects (2.5s infinite)
+- Code block border flow (3s infinite)
+
+** Performance **
+Animations use GPU-accelerated properties (transform, opacity) where possible. The theme respects `prefers-reduced-motion` for users who prefer less animation.
+
+* 📝 Test Footer
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+This theme demonstrates a clean, aurora-inspired aesthetic perfect for documentation, personal notes, or any content that benefits from a futuristic yet elegant design.
+
+#+BEGIN_QUOTE
+  "In the realm of code, let the aurora guide your thoughts."
+#+END_QUOTE

@@ -1,0 +1,57 @@
+#+TITLE: French Bistro - Demo
+#+AUTHOR: Chef Pierre
+#+DESCRIPTION: A French bistro aesthetic theme demo
+#+SETUPFILE: ../org/html-theme-french_bistro-local.setup
+
+* Welcome to La Café Documentation
+** Introduction
+This is a demo of the French Bistro theme for Org mode HTML export.
+
+The theme features:
+- Warm reds and cream backgrounds
+- Playfair Display headings
+- Dancing Script accents
+- Checkered patterns
+- Ornate borders
+
+** Example Section
+*** Subsection
+Here's some sample text to demonstrate the typography.
+
+The ~font~ style works beautifully with the bistro aesthetic.
+
+- Item one
+- Item two
+- Item three
+
+** Code Example
+#+BEGIN_SRC javascript
+function greet(name) {
+  console.log(`Bonjour, ${name}!`);
+  return `Welcome to La Café!`;
+}
+#+END_SRC
+
+** Table Example
+| Item          | Price  |
+|---------------+--------|
+| Café          | $3.50  |
+| Croissant     | $2.75  |
+| Coq au Vin    | $18.00 |
+
+** Admonition
+[[file:../test.org][Admonition Example]]
+
+** Links and References
+- [[file:index.org][Main Index]]
+- [[http://example.com][External Link]]
+
+** Block Quote
+> "C'est délicieux!"
+> -- Chef Pierre
+
+** Horizontal Rule
+****
+
+** Conclusion
+Merci for trying the French Bistro theme!

@@ -1,0 +1,1033 @@
+/*
+ * Executive Theme - Professional Business & Corporate
+ * Authoritative, trustworthy, high-impact design
+ * 
+ * Copyright (C) 2024 Open Source Contributors
+ * Licensed under GPL v3 or later
+ */
+
+:root {
+  /* Premium color palette - Navy, Gold, White */
+  --navy-dark: #0f172a;
+  --navy-mid: #1e293b;
+  --navy-light: #334155;
+  --gold-primary: #d4a574;
+  --gold-light: #f5d0a9;
+  --gold-dark: #b8956d;
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --gray-light: #e2e8f0;
+  --gray-medium: #94a3b8;
+  --gray-dark: #475569;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  
+  /* Typography - authoritative and readable */
+  --font-heading: 'Merriweather', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Spacing - generous professional spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Layout - fixed sidebar, content area */
+  --sidebar-width: 320px;
+  --content-max-width: 850px;
+  
+  /* Effects - subtle professionalism */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
+/* Reset and base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gray-dark);
+  background-color: var(--off-white);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ====================
+   SIDEBAR - Navy Background with Gold Accents
+   ==================== */
+#table-of-contents {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+  color: var(--white);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: var(--spacing-xl) var(--spacing-md);
+  box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+}
+
+#table-of-contents h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin: 0 0 var(--spacing-lg) 0;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 3px solid var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+#table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#table-of-contents li {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+#table-of-contents a {
+  color: var(--gray-medium);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 0.6rem 1rem;
+  display: block;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+#table-of-contents a:hover {
+  background: rgba(212, 165, 116, 0.1);
+  color: var(--gold-light);
+  border-left-color: var(--gold-primary);
+  transform: translateX(3px);
+}
+
+#table-of-contents a.active {
+  background: rgba(212, 165, 116, 0.15);
+  color: var(--gold-primary);
+  border-left-color: var(--gold-primary);
+  font-weight: 600;
+}
+
+#table-of-contents ul ul {
+  margin-left: 1.5rem;
+  border-left: 2px solid rgba(212, 165, 116, 0.3);
+  padding-left: var(--spacing-sm);
+}
+
+/* ====================
+   MAIN CONTENT AREA - Clean White
+   ==================== */
+#content {
+  margin-left: var(--sidebar-width);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-lg);
+  max-width: var(--content-max-width);
+  width: 100%;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  min-height: 100vh;
+}
+
+/* ====================
+   TYPOGRAPHY - Authoritative & Readable
+   ==================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--navy-dark);
+  line-height: 1.3;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--navy-dark);
+  border-bottom: 4px solid var(--gold-primary);
+  padding-bottom: var(--spacing-sm);
+  margin-top: 0;
+  letter-spacing: -0.02em;
+}
+
+h1::before {
+  content: '■ ';
+  color: var(--gold-primary);
+  font-size: 0.8em;
+  margin-right: 0.5em;
+}
+
+h2 {
+  font-size: 2.2rem;
+  padding-left: 1.2rem;
+  border-left: 5px solid var(--gold-primary);
+  background: linear-gradient(to right, rgba(212, 165, 116, 0.05), transparent);
+  padding: 0.6rem 1.2rem;
+  margin-left: -1.2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: var(--navy-mid);
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--gray-light);
+}
+
+h4, h5, h6 {
+  font-size: 1.3rem;
+  color: var(--gray-dark);
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1.5em 0;
+  max-width: 75ch;
+  color: var(--gray-dark);
+}
+
+/* ====================
+   LINKS - Professional Blue with Gold Hover
+   ==================== */
+a {
+  color: var(--info);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  color: var(--gold-primary);
+  border-bottom-color: var(--gold-primary);
+}
+
+/* ====================
+   SECTIONS - Card-like Styling
+   ==================== */
+.section-number-2 {
+  color: var(--gold-primary);
+  margin-right: 0.6rem;
+  font-weight: 700;
+  font-size: 0.9em;
+  background: var(--off-white);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--gold-light);
+}
+
+.section-number-3 {
+  color: var(--info);
+  margin-right: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85em;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.section-number-4 {
+  color: var(--warning);
+  margin-right: 0.4rem;
+  font-weight: 600;
+  font-size: 0.8em;
+  background: rgba(245, 158, 11, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--border-radius-sm);
+}
+
+/* ====================
+   META INFORMATION - Elegant
+   ==================== */
+#author, #date {
+  font-size: 1.1rem;
+  color: var(--gray-medium);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  background: var(--off-white);
+  border-left: 4px solid var(--gold-primary);
+}
+
+#author {
+  font-weight: 600;
+  color: var(--navy-dark);
+}
+
+/* ====================
+   CODE BLOCKS - Professional Dark Theme
+   ==================== */
+pre.src, pre {
+  background: var(--navy-dark);
+  border: 1px solid var(--navy-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 1.8em 0;
+  color: #e2e8f0;
+  box-shadow: var(--shadow-md);
+}
+
+pre.src::before, pre::before {
+  content: 'CODE';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.7rem;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.org-src-container {
+  margin: 1.8em 0;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--off-white);
+  padding: 0.3em 0.6em;
+  border-radius: var(--border-radius-sm);
+  color: var(--navy-mid);
+  border: 1px solid var(--gray-light);
+}
+
+/* ====================
+   TABLES - Clean Corporate Style
+   ==================== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.8em 0;
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-light);
+}
+
+th, td {
+  padding: 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+th {
+  background: var(--navy-dark);
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+th:first-child {
+  border-top-left-radius: 8px;
+}
+
+th:last-child {
+  border-top-right-radius: 8px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background: var(--off-white);
+}
+
+tr:hover {
+  background: rgba(212, 165, 116, 0.05);
+  transition: background 0.2s ease;
+}
+
+/* ====================
+   LISTS - Clean Bullets
+   ==================== */
+ul, ol {
+  margin: 1.5em 0;
+  padding-left: 2.5rem;
+}
+
+li {
+  margin-bottom: 0.8em;
+  padding-left: 0.5rem;
+}
+
+ul li::marker {
+  color: var(--gold-primary);
+  font-size: 1.2em;
+}
+
+ol li::marker {
+  color: var(--navy-mid);
+  font-weight: 600;
+}
+
+/* ====================
+   TODO/DONE - Professional Task Styling
+   ==================== */
+.todo {
+  font-weight: 600;
+  padding: 0.3em 0.8em;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85em;
+  display: inline-block;
+  margin-right: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.todo.TODO {
+  background: linear-gradient(135deg, #fef3c7, #f59e0b);
+  color: var(--navy-dark);
+}
+
+.todo.DOING {
+  background: linear-gradient(135deg, #dbeafe, #3b82f6);
+  color: var(--navy-dark);
+}
+
+.todo.NA {
+  background: var(--gray-light);
+  color: var(--gray-medium);
+}
+
+.todo.NEXT {
+  background: linear-gradient(135deg, #ffe4e6, #ec4899);
+  color: var(--navy-dark);
+}
+
+.todo.KEYWORD {
+  background: var(--navy-light);
+  color: var(--gold-primary);
+}
+
+.todo.done {
+  background: linear-gradient(135deg, #d1fae5, #10b981);
+  color: var(--navy-dark);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  accent-color: var(--gold-primary);
+  transform: scale(1.3);
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* ====================
+   BLOCKQUOTES - Executive Citations
+   ==================== */
+blockquote {
+  border-left: 5px solid var(--gold-primary);
+  margin: 1.8em 0;
+  padding: 1.5rem 2rem;
+  background: var(--off-white);
+  font-style: italic;
+  color: var(--gray-dark);
+  font-size: 1.1em;
+  box-shadow: var(--shadow-sm);
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.95em;
+  color: var(--navy-dark);
+  font-style: normal;
+  font-weight: 600;
+}
+
+blockquote cite::before {
+  content: '— ';
+  color: var(--gold-primary);
+}
+
+/* ====================
+   KEYWORDS & HIGHLIGHTS
+   ==================== */
+.keyword {
+  color: var(--navy-dark);
+  font-weight: 700;
+  font-size: 0.9em;
+  background: var(--gold-light);
+  padding: 0.2em 0.6em;
+  border-radius: var(--border-radius-sm);
+}
+
+.highlight {
+  background: linear-gradient(120deg, rgba(212, 165, 116, 0.15), transparent);
+  padding: 0.3em 0.6em;
+  border-radius: var(--border-radius-sm);
+  border-left: 4px solid var(--gold-primary);
+}
+
+/* ====================
+   TIMESTAMPS - Professional Date Display
+   ==================== */
+.timestamp {
+  font-size: 0.88em;
+  color: var(--gray-medium);
+  background: var(--off-white);
+  padding: 0.4em 1em;
+  border-radius: var(--border-radius-md);
+  display: inline-block;
+  margin: 0.4rem 0;
+  font-weight: 600;
+  border: 1px solid var(--gray-light);
+}
+
+.timestamp-kwd {
+  color: var(--gold-primary);
+  font-weight: 700;
+}
+
+/* ====================
+   LOGBOOK & PROPERTIES
+   ==================== */
+/* Note: Org properties drawers (:PROPERTIES:...:END:) are typically 
+   not exported to HTML by default. They are used by Org for 
+   internal tracking (IDs, timestamps, etc.). If you want to display 
+   metadata in HTML, use custom HTML elements or org-export filters. */
+.logbook {
+  margin: 1.5em 0;
+  padding: 1.4rem;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--border-radius-md);
+  font-size: 0.92rem;
+  border-left: 4px solid var(--gold-primary);
+}
+
+.logbook-entry {
+  margin-bottom: 0.8em;
+  color: var(--gray-dark);
+}
+
+.properties {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  background: var(--navy-dark);
+  padding: 1.3rem;
+  border-radius: var(--border-radius-md);
+  margin: 1.5em 0;
+  border-left: 4px solid var(--gold-primary);
+  display: block;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.properties-drawer {
+  background: var(--navy-dark);
+  border: 1px solid var(--navy-light);
+  border-radius: var(--border-radius-md);
+  padding: 1.3rem;
+  margin: 1.5em 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* ====================
+   POSTAMBLE - Professional Footer
+   ==================== */
+#postamble {
+  margin-top: 5em;
+  padding-top: 2.5em;
+  border-top: 2px solid var(--gold-primary);
+  font-size: 0.95rem;
+  color: var(--gray-medium);
+  text-align: center;
+}
+
+/* ====================
+   DROP CAP - Elegant First Letter
+   ==================== */
+#content > div > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  float: left;
+  margin-right: 0.7rem;
+  margin-top: -0.3rem;
+  line-height: 1;
+  color: var(--gold-primary);
+  background: var(--off-white);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+}
+
+/* ====================
+   MOBILE RESPONSIVE
+   ==================== */
+@media screen and (max-width: 1024px) {
+  :root {
+    --sidebar-width: 280px;
+  }
+  
+  #table-of-contents {
+    width: 280px;
+  }
+  
+  #content {
+    margin-left: 280px;
+    padding: var(--spacing-lg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  
+  #table-of-contents {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    margin-bottom: var(--spacing-md);
+    border-right: none;
+    border-bottom: 3px solid var(--gold-primary);
+  }
+  
+  #table-of-contents h2 {
+    text-align: center;
+  }
+  
+  #content {
+    margin-left: 0;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+  
+  h1 {
+    font-size: 2.3rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+  
+  #table-of-contents {
+    max-height: 180px;
+  }
+  
+  #table-of-contents h2 {
+    font-size: 1.2rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+  
+  #content {
+    padding: var(--spacing-sm);
+  }
+  
+  pre.src, pre, blockquote, table {
+    margin-left: calc(-1 * var(--spacing-sm));
+    border-radius: 0;
+    max-width: calc(100vw + var(--spacing-sm));
+  }
+  
+  th, td {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  p, li {
+    font-size: 16px;
+  }
+}
+
+/* ====================
+   PRINT STYLES
+   ==================== */
+@media print {
+  body {
+    display: block;
+    padding: 0;
+    background: white;
+  }
+  
+  #table-of-contents {
+    display: none;
+  }
+  
+  #content {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  
+  pre.src, pre {
+    background: white;
+    border: 1px solid #ccc;
+    color: black;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+/* ====================
+   CUSTOM METADATA DISPLAY (for recipes, etc.)
+   ==================== */
+.recipe-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5em 0;
+  padding: 1.2rem;
+  background: var(--off-white);
+  border-left: 4px solid var(--gold-primary);
+  border-radius: var(--border-radius-sm);
+}
+
+.recipe-meta span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.recipe-meta .rating {
+  color: var(--gold-primary);
+  font-size: 1.1rem;
+}
+
+.recipe-meta .time {
+  color: var(--info);
+}
+
+.recipe-meta .id {
+  color: var(--gray-medium);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* ====================
+   ADDITIONAL ORG-ELEMENTS (readtheorg/bigblow compatibility)
+   ==================== */
+
+/* Code blocks & examples */
+.codeblock, .literal-block, .example {
+  background: var(--navy-dark);
+  border: 1px solid var(--navy-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 1.8em 0;
+  color: #e2e8f0;
+  box-shadow: var(--shadow-md);
+}
+
+/* Admonitions (notes, warnings, tips, etc.) */
+.admonition-title {
+  font-weight: 700;
+  color: var(--white);
+  background: var(--navy-mid);
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  margin: -1px -1px 0 -1px;
+}
+
+.note, .seealso {
+  border-left: 4px solid var(--info);
+  background: rgba(59, 130, 246, 0.05);
+  padding: var(--spacing-md);
+  margin: 1.8em 0;
+  border-radius: var(--border-radius-md);
+}
+
+.warning, .caution, .attention {
+  border-left: 4px solid var(--warning);
+  background: rgba(245, 158, 11, 0.05);
+  padding: var(--spacing-md);
+  margin: 1.8em 0;
+  border-radius: var(--border-radius-md);
+}
+
+.tip, .important, .hint {
+  border-left: 4px solid var(--success);
+  background: rgba(16, 185, 129, 0.05);
+  padding: var(--spacing-md);
+  margin: 1.8em 0;
+  border-radius: var(--border-radius-md);
+}
+
+.danger, .error {
+  border-left: 4px solid #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+  padding: var(--spacing-md);
+  margin: 1.8em 0;
+  border-radius: var(--border-radius-md);
+}
+
+.admonitiontodo {
+  border-left: 4px solid var(--gold-primary);
+  background: rgba(212, 165, 116, 0.05);
+  padding: var(--spacing-md);
+  margin: 1.8em 0;
+  border-radius: var(--border-radius-md);
+}
+
+/* Alignment */
+.center {
+  text-align: center;
+  margin: 1.8em auto;
+  max-width: 100%;
+}
+
+.left {
+  text-align: left;
+  margin: 1.8em 0;
+}
+
+.right {
+  text-align: right;
+  margin: 1.8em 0;
+}
+
+/* Verse & poetry */
+.verse {
+  font-family: var(--font-heading);
+  font-style: italic;
+  padding-left: var(--spacing-md);
+  margin: 1.8em 0;
+  border-left: 3px solid var(--gold-primary);
+  color: var(--gray-dark);
+  line-height: 1.8;
+}
+
+/* Math & equations */
+.math {
+  text-align: center;
+  font-size: 1.1em;
+  padding: var(--spacing-md) 0;
+  margin: 1.8em 0;
+  font-style: italic;
+  color: var(--navy-dark);
+}
+
+/* Footnotes */
+.footnote, .footnum, .footref {
+  font-size: 0.85em;
+  vertical-align: super;
+  color: var(--gold-primary);
+  margin: 0 0.3em;
+  cursor: pointer;
+}
+
+.footnote:before {
+  content: "[";
+  color: var(--gold-primary);
+}
+
+.footnote:after {
+  content: "]";
+  color: var(--gold-primary);
+}
+
+/* Tags & flags */
+.tag span {
+  background: var(--gray-light);
+  color: var(--gray-dark);
+  padding: 0.2em 0.6rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85em;
+  margin-right: 0.4rem;
+}
+
+.tag .FLAGGED {
+  background: #ef4444;
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Inline tasks */
+.inlinetask {
+  border: 2px solid var(--gray-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  background: var(--off-white);
+  margin: 1.8em 0;
+}
+
+.inlinetask-title {
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 0.8em;
+}
+
+/* Underline */
+.underline {
+  text-decoration: underline;
+  text-decoration-color: var(--gold-primary);
+  text-decoration-thickness: 2px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  text-align: center;
+  margin-top: -1em;
+  margin-bottom: 2em;
+  font-weight: 500;
+}
+
+/* Header links (anchors for headings) */
+.headerlink {
+  color: var(--gold-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+h1:hover .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink {
+  opacity: 1;
+}
+
+/* List styling enhancements */
+#content ul, #content ol {
+  margin: 1.5em 0;
+  padding-left: 2.5rem;
+}
+
+#content ul li, #content ol li {
+  margin-bottom: 0.8em;
+}
+
+/* Definition lists */
+dl {
+  margin: 1.8em 0;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--navy-dark);
+  margin-top: 1em;
+}
+
+dd {
+  margin-left: 2rem;
+  margin-bottom: 1em;
+}
+
+/* Special formatting for preformatted text */
+pre {
+  background: var(--navy-dark);
+  border: 1px solid var(--navy-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 1.8em 0;
+  color: #e2e8f0;
+  box-shadow: var(--shadow-md);
+}
+
+/* ====================
+   SCROLLBAR - Subtle Styling
+   ==================== */
+#table-of-contents::-webkit-scrollbar {
+  width: 6px;
+}
+
+#table-of-contents::-webkit-scrollbar-track {
+  background: var(--navy-dark);
+}
+
+#table-of-contents::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: 3px;
+}
+
+#table-of-contents::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}

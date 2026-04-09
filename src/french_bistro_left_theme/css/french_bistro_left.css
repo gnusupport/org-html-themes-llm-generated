@@ -1,0 +1,1731 @@
+/*
+ * French Bistro Left Theme - French Bistrot Aesthetic with Fixed Sidebar
+ * Same French bistro aesthetic as standard theme, but with fixed left sidebar TOC
+ * No collapsible TOC - always visible for quick navigation
+ */
+
+/* ==========================================================================
+   CSS Variables - French Bistro Color Palette
+   ========================================================================== */
+
+:root {
+  /* French Bistro Colors */
+  --bistro-red: #C41E3A;          /* Primary bistro red */
+  --bistro-cream: #F5F1E8;        /* Warm cream background */
+  --bistro-cream-light: #FAF7F0;  /* Lighter cream for cards */
+  --bistro-black: #2C3E50;        /* Chalkboard black for text */
+  --bistro-gold: #D4AF37;         /* Elegant gold accent */
+  --bistro-brown: #8B4513;        /* Saddle brown for borders */
+  --bistro-white: #FFFFFF;        /* Pure white for contrast */
+  
+  /* Fonts - French Bistro Typography */
+  --bistro-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --bistro-accent: 'Dancing Script', 'Segoe Script', cursive;
+  --bistro-body: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  --bistro-mono: 'Fira Code', 'Courier Prime', 'Courier New', monospace;
+  
+  /* Layout - Fixed Sidebar */
+  --bistro-sidebar-width: 300px;
+  --bistro-content-max-width: 900px;
+  --bistro-spacing: 1.5rem;
+  --bistro-border-radius: 3px;
+  
+  /* Shadows */
+  --bistro-shadow: 0 4px 6px rgba(44, 62, 80, 0.1);
+  --bistro-shadow-hover: 0 8px 15px rgba(44, 62, 80, 0.15);
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bistro-cream);
+  background-image: 
+    linear-gradient(45deg, rgba(196, 30, 58, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(196, 30, 58, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(196, 30, 58, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(196, 30, 58, 0.03) 75%);
+  background-size: 30px 30px;
+  color: var(--bistro-black);
+  font-family: var(--bistro-body);
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* ==========================================================================
+   Layout - Flexbox with Fixed Left Sidebar
+   ========================================================================== */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Fixed Left Sidebar - Table of Contents
+   ========================================================================== */
+
+#table-of-contents {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--bistro-sidebar-width);
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--bistro-black);
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.02), rgba(212, 175, 55, 0.02)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><circle cx="25" cy="25" r="2" fill="%23D4AF37" opacity="0.1"/></svg>');
+  padding: 2rem 1.5rem;
+  z-index: 1000;
+  box-shadow: 
+    2px 0 12px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.2);
+  border-right: 2px solid var(--bistro-gold);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Decorative corner ornaments */
+#table-of-contents::before {
+  content: '✦';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: var(--bistro-gold);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+#table-of-contents::after {
+  content: '✦';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: var(--bistro-gold);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* Decorative bottom ornament */
+#table-of-contents .sidebar-decoration {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--bistro-gold), transparent);
+  opacity: 0.5;
+}
+
+/* TOC Header - Chalkboard style */
+#table-of-contents h2 {
+  font-family: var(--bistro-accent);
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem 0;
+  color: var(--bistro-cream);
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed var(--bistro-gold);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Scrollbar styling for sidebar */
+#table-of-contents::-webkit-scrollbar {
+  width: 8px;
+}
+
+#table-of-contents::-webkit-scrollbar-track {
+  background: rgba(44, 62, 80, 0.3);
+}
+
+#table-of-contents::-webkit-scrollbar-thumb {
+  background: var(--bistro-gold);
+  border-radius: 4px;
+}
+
+#table-of-contents::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.8);
+}
+
+/* TOC Links */
+#table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#table-of-contents li {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+}
+
+#table-of-contents li:hover {
+  background-color: rgba(212, 175, 55, 0.15);
+  transform: translateX(3px);
+}
+
+#table-of-contents li::before {
+  display: none;
+}
+
+/* TOC Links */
+#table-of-contents a {
+  font-family: var(--bistro-body);
+  font-size: 0.95rem;
+  color: var(--bistro-cream);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  display: block;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  line-height: 1.5;
+  border-radius: 2px;
+}
+
+#table-of-contents a:hover {
+  background-color: rgba(212, 175, 55, 0.2);
+  border-left-color: var(--bistro-gold);
+  color: var(--bistro-gold);
+  padding-left: 1rem;
+}
+
+/* Active/nested TOC items */
+#table-of-contents ul ul {
+  margin-left: 1.5rem;
+  border-left: 1px dotted rgba(212, 175, 55, 0.4);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+#table-of-contents ul ul a {
+  font-size: 0.9rem;
+  color: rgba(245, 241, 232, 0.85);
+}
+
+#table-of-contents ul ul a:hover {
+  color: var(--bistro-cream);
+}
+
+/* TOC footer */
+#table-of-contents .toc-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  text-align: center;
+  font-family: var(--bistro-accent);
+  font-size: 0.9rem;
+  color: rgba(245, 241, 232, 0.6);
+}
+
+/* ==========================================================================
+   Main Content Container
+   ========================================================================== */
+
+.org-div-container {
+  background-color: var(--bistro-cream-light);
+  padding: 3rem 3rem;
+  border-radius: var(--bistro-border-radius);
+  box-shadow: 
+    0 0 0 1px rgba(196, 30, 58, 0.1),
+    var(--bistro-shadow);
+  position: relative;
+  max-width: var(--bistro-content-max-width);
+  flex: 1;
+  margin-left: var(--bistro-sidebar-width);
+  margin-right: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  min-height: calc(100vh - 4rem);
+}
+
+/* Ornate border decoration */
+.org-div-container::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 2px double var(--bistro-gold);
+  border-radius: var(--bistro-border-radius);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.org-div-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  border-radius: var(--bistro-border-radius);
+}
+
+/* ==========================================================================
+   Typography - Headings with Playfair Display
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--bistro-heading);
+  color: var(--bistro-black);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  border-bottom: 3px double var(--bistro-red);
+  padding-bottom: 0.75rem;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(212, 175, 55, 0.3);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  border-bottom: 2px solid var(--bistro-gold);
+  padding-bottom: 0.5rem;
+  color: var(--bistro-red);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  padding-left: 0.5rem;
+  border-left: 4px solid var(--bistro-red);
+}
+
+h4 {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  color: var(--bistro-brown);
+}
+
+h5, h6 {
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  color: #5a6c7d;
+  font-style: italic;
+}
+
+/* Section numbers with bistro flair */
+.section-number::before {
+  color: var(--bistro-red);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   Links - Elegant French Bistro Style
+   ========================================================================== */
+
+a {
+  color: var(--bistro-red);
+  text-decoration: none;
+  border-bottom: 2px dotted var(--bistro-red);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  border-bottom-style: solid;
+  border-bottom-color: var(--bistro-gold);
+  color: var(--bistro-brown);
+}
+
+a:active {
+  border-bottom-style: solid;
+  color: var(--bistro-black);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--bistro-gold);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Paragraphs and Text Elements
+   ========================================================================== */
+
+p {
+  margin: 1.2rem 0;
+  text-align: justify;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+strong, b {
+  font-weight: 700;
+  color: var(--bistro-black);
+}
+
+em, i {
+  font-style: italic;
+  color: var(--bistro-brown);
+}
+
+del {
+  text-decoration: line-through;
+  color: #999;
+}
+
+small {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ==========================================================================
+   Lists - Styled with Bistrot Flair
+   ========================================================================== */
+
+ul, ol {
+  margin: 1.5rem 0;
+  padding-left: 2.5rem;
+}
+
+/* Unordered lists with custom bullets */
+ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+ul li::before {
+  content: '❧';
+  color: var(--bistro-red);
+  font-size: 0.8em;
+  margin-right: 0.75rem;
+  display: inline-block;
+  width: 1em;
+  line-height: 1.8;
+}
+
+/* Nested unordered lists */
+ul ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  border-left: 2px dotted var(--bistro-gold);
+}
+
+ul ul li::before {
+  content: '•';
+  color: var(--bistro-brown);
+  font-size: 0.7em;
+}
+
+/* Ordered lists with French styling */
+ol {
+  counter-reset: bistro-list;
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+ol li {
+  counter-increment: bistro-list;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ol li::before {
+  content: counter(bistro-list) '.';
+  color: var(--bistro-red);
+  font-family: var(--bistro-heading);
+  font-size: 1.2em;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+}
+
+/* Definition lists */
+dl {
+  margin: 1.5rem 0;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--bistro-black);
+  margin-top: 1.5rem;
+  font-family: var(--bistro-heading);
+  font-size: 1.1em;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--bistro-gold);
+}
+
+/* ==========================================================================
+   Code Blocks - Monospace with Elegance
+   ========================================================================== */
+
+code {
+  font-family: var(--bistro-mono);
+  background-color: rgba(44, 62, 80, 0.08);
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--bistro-red);
+  border: 1px solid rgba(196, 30, 58, 0.15);
+}
+
+pre {
+  background-color: var(--bistro-black);
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 2px solid var(--bistro-gold);
+  border-radius: var(--bistro-border-radius);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  font-family: var(--bistro-mono);
+  font-size: 0.9em;
+  line-height: 1.7;
+  box-shadow: 
+    inset 0 0 0 1px rgba(212, 175, 55, 0.2),
+    0 4px 12px rgba(44, 62, 80, 0.2);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--bistro-cream);
+  border: none;
+  font-size: inherit;
+}
+
+/* Code block language hint */
+div.highlight pre {
+  position: relative;
+}
+
+div.highlight::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--bistro-accent);
+  font-size: 0.7rem;
+  color: var(--bistro-gold);
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(44, 62, 80, 0.6);
+  border-bottom-left-radius: var(--bistro-border-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   Blockquotes - Chalkboard Style
+   ========================================================================== */
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 5px solid var(--bistro-red);
+  background-color: rgba(44, 62, 80, 0.05);
+  border-radius: var(--bistro-border-radius);
+  font-style: italic;
+  position: relative;
+  box-shadow: var(--bistro-shadow);
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote::before {
+  content: '""';
+  font-family: var(--bistro-accent);
+  font-size: 4rem;
+  color: rgba(196, 30, 58, 0.1);
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  line-height: 1;
+}
+
+blockquote footer,
+blockquote cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--bistro-heading);
+  font-size: 0.95rem;
+  color: var(--bistro-brown);
+  text-align: right;
+  border-top: 1px solid var(--bistro-gold);
+  padding-top: 1rem;
+  font-style: normal;
+}
+
+blockquote cite::before {
+  content: '— ';
+}
+
+/* ==========================================================================
+   Tables - Ornate French Bistro Design
+   ========================================================================== */
+
+table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 3px double var(--bistro-brown);
+  border-radius: var(--bistro-border-radius);
+  overflow: hidden;
+  box-shadow: var(--bistro-shadow);
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(139, 69, 19, 0.3);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--bistro-red);
+  background-image: linear-gradient(180deg, var(--bistro-red), #a01830);
+  font-weight: 700;
+  color: var(--bistro-cream);
+  font-family: var(--bistro-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--bistro-gold);
+}
+
+th:first-child {
+  border-top-left-radius: 4px;
+}
+
+th:last-child {
+  border-top-right-radius: 4px;
+}
+
+td:first-child {
+  border-left: 2px solid var(--bistro-gold);
+  padding-left: 1.5rem;
+}
+
+td:last-child {
+  border-right: 2px solid var(--bistro-gold);
+  padding-right: 1.5rem;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(44, 62, 80, 0.03);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(44, 62, 80, 0.01);
+}
+
+tr:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+tr:hover td {
+  color: var(--bistro-black);
+}
+
+/* Table caption */
+table caption {
+  font-family: var(--bistro-accent);
+  font-size: 1.1rem;
+  color: var(--bistro-brown);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Task Lists - TODO/DONE/Cancelled Styling
+   ========================================================================== */
+
+.todo {
+  color: var(--bistro-red);
+  font-weight: 700;
+  font-family: var(--bistro-heading);
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(196, 30, 58, 0.1);
+  border-radius: 3px;
+  border: 1px solid rgba(196, 30, 58, 0.3);
+}
+
+.done {
+  color: #2e7d32;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.cancelled {
+  color: #c62828;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.keyword {
+  color: var(--bistro-black);
+  font-weight: 700;
+  font-family: var(--bistro-heading);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  margin-right: 0.75rem;
+  accent-color: var(--bistro-red);
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--bistro-red);
+  border-color: var(--bistro-red);
+}
+
+/* ==========================================================================
+   Admonitions - Styled Boxes
+   ========================================================================== */
+
+.admonition {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--bistro-border-radius);
+  border-left: 4px solid;
+  box-shadow: var(--bistro-shadow);
+  position: relative;
+}
+
+.admonition-note {
+  background-color: rgba(33, 150, 243, 0.08);
+  border-color: #1976d2;
+}
+
+.admonition-warning {
+  background-color: rgba(255, 152, 0, 0.08);
+  border-color: #f57c00;
+}
+
+.admonition-tip {
+  background-color: rgba(76, 175, 80, 0.08);
+  border-color: #388e3c;
+}
+
+.admonition-danger {
+  background-color: rgba(244, 67, 54, 0.08);
+  border-color: #d32f2f;
+}
+
+.admonition-info {
+  background-color: rgba(156, 39, 176, 0.08);
+  border-color: #7b1fa2;
+}
+
+.admonition-title {
+  font-family: var(--bistro-heading);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+.admonition-title::before {
+  margin-right: 0.5rem;
+}
+
+/* Admonition icons */
+.admonition-note .admonition-title::before { content: 'ℹ️ '; }
+.admonition-warning .admonition-title::before { content: '⚠️ '; }
+.admonition-tip .admonition-title::before { content: '💡 '; }
+.admonition-danger .admonition-title::before { content: '⚡ '; }
+.admonition-info .admonition-title::before { content: '📝 '; }
+
+/* ==========================================================================
+   Horizontal Rules - Decorative Dividers
+   ========================================================================== */
+
+hr {
+  border: none;
+  border-top: 2px dashed var(--bistro-brown);
+  margin: 2.5rem 0;
+  text-align: center;
+  position: relative;
+  opacity: 0.8;
+}
+
+hr::before {
+  content: '✦ ✦ ✦';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bistro-cream-light);
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: var(--bistro-gold);
+  font-family: var(--bistro-accent);
+  letter-spacing: 0.5rem;
+}
+
+hr::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--bistro-gold), 
+    transparent);
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   Center, Example, and Quote Blocks
+   ========================================================================== */
+
+.center {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: rgba(212, 175, 55, 0.05);
+  border: 2px dashed var(--bistro-gold);
+  border-radius: var(--bistro-border-radius);
+}
+
+.example {
+  background-color: var(--bistro-black);
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+  background-size: 15px 15px;
+  border: 2px solid var(--bistro-brown);
+  border-radius: var(--bistro-border-radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-family: var(--bistro-mono);
+  font-size: 0.95rem;
+  color: var(--bistro-cream);
+  overflow-x: auto;
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+.quote {
+  background-color: rgba(196, 30, 58, 0.05);
+  border: 2px solid var(--bistro-red);
+  border-left: 6px solid var(--bistro-red);
+  border-radius: var(--bistro-border-radius);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  position: relative;
+}
+
+.quote::before {
+  content: '❝';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 3rem;
+  color: rgba(196, 30, 58, 0.1);
+  font-family: var(--bistro-heading);
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Footnotes - Elegant Styling
+   ========================================================================== */
+
+#footnotes {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed var(--bistro-brown);
+  background-color: rgba(212, 175, 55, 0.03);
+  padding-left: 1.5rem;
+  border-radius: var(--bistro-border-radius);
+}
+
+.footnote {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.footnum {
+  font-family: var(--bistro-heading);
+  color: var(--bistro-red);
+  font-weight: 700;
+  margin-right: 0.5rem;
+  font-size: 0.8em;
+}
+
+.footpara {
+  display: inline;
+}
+
+.footpara::before {
+  content: ' ';
+}
+
+/* Back link in footnotes */
+.footnum-ref a {
+  color: var(--bistro-red);
+  border-bottom: 1px dotted var(--bistro-red);
+}
+
+/* ==========================================================================
+   Tags and Inline Tasks
+   ========================================================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(44, 62, 80, 0.08);
+  border: 1px solid var(--bistro-brown);
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: var(--bistro-brown);
+  font-family: var(--bistro-body);
+  margin: 0.2rem 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: var(--bistro-red);
+  border-color: var(--bistro-red);
+  color: var(--bistro-cream);
+}
+
+.inline-task {
+  font-family: var(--bistro-heading);
+  color: var(--bistro-red);
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  background-color: rgba(196, 30, 58, 0.1);
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   Math and Verbatim
+   ========================================================================== */
+
+.math {
+  font-style: italic;
+  color: var(--bistro-brown);
+  font-family: var(--bistro-mono);
+}
+
+.verbatim {
+  font-family: var(--bistro-mono);
+  background-color: rgba(44, 62, 80, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--bistro-brown);
+  border: 1px solid rgba(44, 62, 80, 0.15);
+}
+
+/* ==========================================================================
+   Timestamps and Dates
+   ========================================================================== */
+
+.timestamp, .date {
+  font-family: var(--bistro-accent);
+  font-size: 1rem;
+  color: var(--bistro-brown);
+  font-weight: 500;
+}
+
+.timestamp::before {
+  content: '✦ ';
+  font-size: 0.8em;
+}
+
+.org-drawer {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  background-color: rgba(44, 62, 80, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: var(--bistro-border-radius);
+  margin: 1rem 0;
+  border-left: 3px solid var(--bistro-gold);
+}
+
+/* ==========================================================================
+   Signature Area
+   ========================================================================== */
+
+.signature {
+  font-family: var(--bistro-accent);
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  text-align: right;
+  transform: rotate(-1deg);
+  color: var(--bistro-brown);
+  padding: 1rem;
+  border-top: 1px dashed var(--bistro-gold);
+  margin-right: 2rem;
+}
+
+/* ==========================================================================
+   SVG and Images
+   ========================================================================== */
+
+.org-svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--bistro-border-radius);
+}
+
+.org-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--bistro-border-radius);
+  box-shadow: var(--bistro-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.org-image:hover {
+  box-shadow: var(--bistro-shadow-hover);
+}
+
+.org-image img {
+  border-radius: var(--bistro-border-radius);
+}
+
+/* Image captions */
+.figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.figure img {
+  border: 3px solid var(--bistro-gold);
+  padding: 0.5rem;
+  background-color: var(--bistro-cream);
+}
+
+.figure-caption {
+  font-family: var(--bistro-accent);
+  font-size: 1rem;
+  color: var(--bistro-brown);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Verse Blocks - Poetic Presentation
+   ========================================================================== */
+
+.verse {
+  font-family: var(--bistro-accent);
+  font-style: normal;
+  white-space: pre-wrap;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--bistro-red);
+  background-color: rgba(196, 30, 58, 0.03);
+  border-radius: var(--bistro-border-radius);
+  font-size: 1.1rem;
+  line-height: 2;
+  position: relative;
+  box-shadow: var(--bistro-shadow);
+}
+
+.verse::before {
+  content: '♩';
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--bistro-gold);
+  opacity: 0.6;
+}
+
+.verse::after {
+  content: '♩';
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--bistro-gold);
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   PlantUML and Diagrams
+   ========================================================================== */
+
+.plantuml {
+  background-color: var(--bistro-black);
+  border: 2px solid var(--bistro-gold);
+  border-radius: var(--bistro-border-radius);
+  padding: 1rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  box-shadow: var(--bistro-shadow);
+}
+
+.plantuml svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Diverts and Latex
+   ========================================================================== */
+
+.divert {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  background-color: rgba(44, 62, 80, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: var(--bistro-border-radius);
+  margin: 1rem 0;
+  border-left: 3px solid var(--bistro-gold);
+  color: #666;
+}
+
+/* ==========================================================================
+   Latex Equations
+   ========================================================================== */
+
+.math-display {
+  font-family: var(--bistro-mono);
+  font-style: italic;
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(212, 175, 55, 0.05);
+  border-radius: var(--bistro-border-radius);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   Source Blocks - Org Mode Code
+   ========================================================================== */
+
+.src {
+  margin: 2rem 0;
+}
+
+.src-block {
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   Property Drawer
+   ========================================================================== */
+
+.properties-drawer {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  background-color: rgba(44, 62, 80, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: var(--bistro-border-radius);
+  margin: 0.5rem 0 1rem 0;
+  border-left: 3px solid var(--bistro-gold);
+}
+
+/* ==========================================================================
+   Logbook Entries
+   ========================================================================== */
+
+.logbook {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: rgba(44, 62, 80, 0.03);
+  border-radius: var(--bistro-border-radius);
+}
+
+.logbook-drawer {
+  font-family: var(--bistro-mono);
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Clock Entries
+   ========================================================================== */
+
+.clock {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  color: var(--bistro-red);
+  background-color: rgba(196, 30, 58, 0.08);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Link Styles - Org Mode
+   ========================================================================== */
+
+.org-link {
+  color: var(--bistro-red);
+  border-bottom: 1px dotted var(--bistro-red);
+}
+
+.org-link:hover {
+  color: var(--bistro-brown);
+}
+
+/* Link types */
+a.org-link-home {
+  color: var(--bistro-red);
+}
+
+a.org-link-file {
+  color: var(--bistro-brown);
+}
+
+a.org-link-id {
+  color: #1976d2;
+}
+
+/* ==========================================================================
+   Admonition Styles for Org Mode
+   ========================================================================== */
+
+.org-admonition {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--bistro-border-radius);
+  border-left: 4px solid;
+}
+
+.org-admonition-note {
+  background-color: rgba(33, 150, 243, 0.08);
+  border-color: #1976d2;
+}
+
+.org-admonition-warning {
+  background-color: rgba(255, 152, 0, 0.08);
+  border-color: #f57c00;
+}
+
+.org-admonition-tip {
+  background-color: rgba(76, 175, 80, 0.08);
+  border-color: #388e3c;
+}
+
+.org-admonition-danger {
+  background-color: rgba(244, 67, 54, 0.08);
+  border-color: #d32f2f;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  body {
+    display: block;
+  }
+  
+  #table-of-contents {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    border-right: none;
+    border-bottom: 2px solid var(--bistro-gold);
+    padding: 1.5rem;
+  }
+  
+  #table-of-contents .sidebar-decoration {
+    display: none;
+  }
+  
+  #table-of-contents::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #table-of-contents h2 {
+    font-size: 1.6rem;
+  }
+  
+  #table-of-contents a {
+    font-size: 0.9rem;
+  }
+  
+  .org-div-container {
+    margin: 0;
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  html {
+    font-size: 15px;
+  }
+  
+  body {
+    padding: 0;
+    background: none;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  code {
+    font-size: 0.85em;
+    word-break: break-word;
+  }
+  
+  pre {
+    padding: 0.75rem;
+    font-size: 0.85em;
+  }
+  
+  table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+  }
+  
+  blockquote {
+    padding: 1rem 1.25rem;
+    font-size: 0.95em;
+  }
+  
+  .admonition {
+    padding: 1rem;
+  }
+  
+  .center, .example, .quote {
+    padding: 1rem;
+  }
+  
+  .verse {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .signature {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    text-align: center;
+    transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    font-size: 0.95em;
+  }
+  
+  code {
+    font-size: 0.8em;
+  }
+  
+  pre {
+    padding: 0.5rem;
+    font-size: 0.8em;
+  }
+  
+  blockquote {
+    padding: 0.75rem 1rem;
+  }
+  
+  .admonition {
+    padding: 0.75rem 1rem;
+  }
+  
+  .center, .example, .quote {
+    padding: 0.75rem;
+  }
+  
+  .org-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  body::before, body::after {
+    display: none;
+  }
+  
+  #table-of-contents {
+    position: static;
+    height: auto;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    background-color: white;
+    border: 1px solid #999;
+    box-shadow: none;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #table-of-contents h2 {
+    color: black;
+    border-bottom-color: #999;
+  }
+  
+  #table-of-contents a {
+    color: black;
+    border: none;
+  }
+  
+  #table-of-contents a:hover {
+    color: black;
+    border-bottom: 1px dotted black;
+  }
+  
+  .org-div-container {
+    box-shadow: none;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .org-div-container::before,
+  .org-div-container::after {
+    display: none;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+    border-bottom: none;
+  }
+  
+  pre, code {
+    background-color: transparent;
+    border: none;
+    color: black;
+  }
+  
+  table {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  th {
+    background-color: #eee;
+    color: black;
+  }
+  
+  tr:hover {
+    background-color: transparent;
+  }
+  
+  blockquote, .admonition, .center, .example, .quote, .verse {
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+  
+  .org-image img {
+    max-width: 100%;
+  }
+  
+  .signature {
+    display: none;
+  }
+  
+  .footnotes {
+    page-break-before: auto;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.invisible {
+  visibility: hidden;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* Hide elements */
+.hidden {
+  display: none !important;
+}
+
+/* Text alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Vertical alignment */
+.v-top {
+  vertical-align: top;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.v-bottom {
+  vertical-align: bottom;
+}
+
+/* Spacing utilities */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* ==========================================================================
+   Org Mode Specific Classes
+   ========================================================================== */
+
+/* Org mode structural elements */
+#text * {
+  margin: 0;
+  padding: 0;
+}
+
+#text ul,
+#text ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+#text li {
+  margin: 0.5rem 0;
+}
+
+/* Org mode headings */
+.org-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Org mode properties */
+.org-properties {
+  display: none;
+}
+
+/* Org mode logbook */
+.org-logbook {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Org mode clock */
+.org-clock {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  color: var(--bistro-red);
+}
+
+/* Org mode plain list */
+.plain-list-item {
+  margin: 0.5rem 0;
+}
+
+/* Org mode footnote reference */
+.footnote-ref {
+  font-size: 0.8em;
+  color: var(--bistro-red);
+  vertical-align: super;
+  font-weight: 700;
+}
+
+/* Org mode footnote definition */
+.footnote-definition {
+  margin-top: 0.5rem;
+}
+
+/* Org mode keyword */
+.keyword {
+  color: var(--bistro-black);
+  font-weight: 700;
+}
+
+/* Org mode checkbox */
+.org-checkbox {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  background-color: var(--bistro-cream);
+  border: 2px solid var(--bistro-brown);
+  border-radius: 3px;
+  text-align: center;
+  line-height: 0.8em;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.org-checkbox-state:checked::before {
+  content: '✓';
+  color: var(--bistro-red);
+  font-weight: bold;
+}
+
+/* Org mode timestamp */
+.timestamp {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Org mode planning */
+.org-planning {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Org mode drawer */
+.org-drawer {
+  font-family: var(--bistro-mono);
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Org mode table cell */
+.org-table-cell {
+  padding: 0.5rem;
+}
+
+/* Org mode table */
+.org-table {
+  margin: 1rem 0;
+}
+
+/* Org mode link text */
+.link-text {
+  color: var(--bistro-red);
+}
+
+/* Org mode target */
+.target {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}

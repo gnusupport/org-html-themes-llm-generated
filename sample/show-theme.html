@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Magazine Theme Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: 0 auto; }
+        .preview-box { background: #fdf6e3; border: 2px solid #e67e22; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        h1 { color: #2c3e50; font-family: 'Merriweather', serif; }
+        .color-swatch { display: inline-block; width: 80px; height: 80px; border-radius: 8px; margin: 10px; border: 2px solid #ddd; }
+        .layout-diagram { background: white; border: 2px solid #2c3e20; padding: 20px; margin: 20px 0; }
+        .box { border: 2px solid #2c3e50; padding: 15px; margin: 10px; background: white; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>🎨 Magazine Theme Preview</h1>
+    
+    <div class="preview-box">
+        <h2>✨ What Makes This Theme Special</h2>
+        <p>This is NOT a white single page! It has:</p>
+        <ul>
+            <li><strong>Warm cream background</strong> (#fdf6e3) - not pure white</li>
+            <li><strong>Dark blue header banner</strong> with gradient</li>
+            <li><strong>Two-column layout</strong> - content on left, sidebar on right</li>
+            <li><strong>Orange accent color</strong> (#e67e22) for highlights</li>
+            <li><strong>Beautiful typography</strong> - Merriweather for headings, Inter for body</li>
+            <li><strong>Colored left borders</strong> on headings</li>
+            <li><strong>Drop cap</strong> on first paragraph</li>
+            <li><strong>Justified text alignment</strong> for professional look</li>
+        </ul>
+    </div>
+
+    <div class="color-swatch" style="background: #2c3e50;"></div>
+    <div class="color-swatch" style="background: #e67e22;"></div>
+    <div class="color-swatch" style="background: #fdf6e3;"></div>
+    <div class="color-swatch" style="background: #34495e;"></div>
+    <p><em>Colors from top to bottom: Primary Blue, Accent Orange, Background, Text</em></p>
+
+    <div class="layout-diagram">
+        <h3>📐 Layout Structure</h3>
+        <pre>
+┌──────────────────────────────────────┬────────────────┐
+│         HEADER BANNER                │                │
+│  Dark blue gradient with title       │  SIDEBAR       │
+│                                      │  ┌──────────┐  │
+├──────────────────────────────────────┤  │ TOC      │  │
+│  TABS (Navigation)                   │  │ Contents │  │
+├───────────────────────────────┬──────┴──┤──────────┤  │
+│                               │         │──────────│  │
+│      MAIN CONTENT             │  ABOUT  │ Author   │  │
+│      (Left Column)            │         │ Date     │  │
+│  - Beautiful headings         │         │          │  │
+│  - Justified text             │         │          │  │
+│  - Colored left borders       │         │          │  │
+│  - Drop cap                   │         │          │  │
+└───────────────────────────────┴─────────┴──────────┴──┘
+        </pre>
+    </div>
+
+    <div class="preview-box">
+        <h2>🔍 How to See It</h2>
+        <ol>
+            <li>Start server: <code>python3 -m http.server 8888 --directory sample</code></li>
+            <li>Open browser: <code>http://localhost:8888/test-magazine.html</code></li>
+            <li>You'll see the full magazine-style layout with all colors!</li>
+        </ol>
+    </div>
+
+    <div class="preview-box">
+        <h2>📁 Files Created</h2>
+        <ul>
+            <li><code>src/magazine_theme/css/magazine.css</code> - 1029 lines of beautiful CSS</li>
+            <li><code>org/html-theme-magazine-local.setup</code> - Local CSS reference</li>
+            <li><code>org/html-theme-magazine.setup</code> - Remote CSS reference</li>
+            <li><code>sample/test-magazine.html</code> - Full HTML demo page</li>
+            <li><code>sample/magazine-demo.org</code> - Sample Org file with content</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,810 @@
+/*
+ * Sacha Theme - Hand-drawn, friendly Org HTML export
+ * Inspired by Sacha Chua's aesthetic
+ * Warm paper background, handwriting fonts, organic borders
+ */
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --sacha-paper: #faf7f2;
+  --sacha-paper-light: #fef9ef;
+  --sacha-text: #2c2c2c;
+  --sacha-heading: #3b2b1f;
+  --sacha-accent: #d96c2b;
+  --sacha-accent-light: #e69b5e;
+  --sacha-code-bg: #f4f0e6;
+  --sacha-border: #b8a892;
+  
+  /* Fonts */
+  --sacha-handwriting: 'Kalam', 'Comic Neue', 'Chalkboard SE', 'Marker Felt', cursive;
+  --sacha-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --sacha-code: 'Fira Code', 'Courier Prime', 'Courier New', monospace;
+  
+  /* Spacing */
+  --sacha-spacing: 1.5rem;
+  --sacha-container: 780px;
+  
+  /* Border radius - irregular for hand-drawn feel */
+  --sacha-border-radius: 2px 8px 4px 6px;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--sacha-paper);
+  color: var(--sacha-text);
+  font-family: var(--sacha-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Container - Full page with margins
+   ========================================================================== */
+
+html {
+  padding: 2rem;
+}
+
+body {
+  max-width: var(--sacha-container);
+  margin: 0 auto;
+  padding: 3rem 3rem;
+  background-color: var(--sacha-paper-light);
+  border-radius: var(--sacha-border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* Optional page edge effect - torn paper feel */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: var(--sacha-border-radius);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+/* ==========================================================================
+   Typography - Headings with handwriting font
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sacha-handwriting);
+  color: var(--sacha-heading);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  border-bottom: 2px dotted var(--sacha-accent);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+}
+
+h4 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+h5, h6 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+/* Section numbers with pencil icon */
+.section-number::before {
+  content: '✽ ';
+  font-family: var(--sacha-handwriting);
+  color: var(--sacha-accent);
+}
+
+/* ==========================================================================
+   Links - dotted/wavy underlines
+   ========================================================================== */
+
+a {
+  color: var(--sacha-accent);
+  text-decoration: none;
+  border-bottom: 2px dotted var(--sacha-accent);
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  border-bottom-style: wavy;
+  border-bottom-color: var(--sacha-accent-light);
+}
+
+a:active {
+  border-bottom-style: solid;
+}
+
+/* ==========================================================================
+   Paragraphs and Text
+   ========================================================================== */
+
+p {
+  margin: 1rem 0;
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--sacha-heading);
+}
+
+em, i {
+  font-style: italic;
+}
+
+del {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* ==========================================================================
+   Lists - hand-drawn markers
+   ========================================================================== */
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+/* Custom bullet markers - pencil-style circles */
+ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+ul li::before {
+  content: '●';
+  color: var(--sacha-accent);
+  font-size: 0.8em;
+  margin-right: 0.5rem;
+  display: inline-block;
+  width: 0.8em;
+}
+
+/* Dashed lines for nested lists */
+ul ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+ul ul li::before {
+  content: '—';
+  color: var(--sacha-border);
+  margin-right: 0.5rem;
+}
+
+/* Ordered lists with hand-drawn numbers */
+ol {
+  counter-reset: sacha-list;
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+ol li {
+  counter-increment: sacha-list;
+  position: relative;
+  padding-left: 2rem;
+}
+
+ol li::before {
+  content: counter(sacha-list) '.';
+  color: var(--sacha-accent);
+  font-family: var(--sacha-handwriting);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Definition lists */
+dl {
+  margin: 1rem 0;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--sacha-heading);
+  margin-top: 1rem;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--sacha-accent-light);
+}
+
+/* ==========================================================================
+   Code - monospace with handwritten feel
+   ========================================================================== */
+
+code {
+  font-family: var(--sacha-code);
+  background-color: var(--sacha-code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+pre {
+  background-color: var(--sacha-code-bg);
+  border: 1px solid var(--sacha-border);
+  border-radius: var(--sacha-border-radius);
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: var(--sacha-code);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Code blocks with language hint */
+div.highlight pre {
+  position: relative;
+}
+
+div.highlight::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--sacha-handwriting);
+  font-size: 0.75rem;
+  color: var(--sacha-accent);
+  padding: 0.25rem 0.5rem;
+  background-color: var(--sacha-code-bg);
+  border-bottom-left-radius: var(--sacha-border-radius);
+}
+
+/* ==========================================================================
+   Blockquotes - warm accent border
+   ========================================================================== */
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--sacha-accent-light);
+  background-color: rgba(230, 155, 94, 0.05);
+  border-radius: var(--sacha-border-radius);
+  font-style: italic;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote footer,
+blockquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--sacha-handwriting);
+  font-size: 0.9rem;
+  color: var(--sacha-accent);
+  text-align: right;
+}
+
+/* ==========================================================================
+   Tables - hand-drawn borders
+   ========================================================================== */
+
+table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid var(--sacha-border);
+  border-radius: var(--sacha-border-radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--sacha-border);
+  text-align: left;
+}
+
+th {
+  background-color: var(--sacha-code-bg);
+  font-weight: 600;
+  color: var(--sacha-heading);
+  font-family: var(--sacha-handwriting);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+tr:hover {
+  background-color: rgba(217, 108, 43, 0.05);
+}
+
+/* ==========================================================================
+   Task Lists - TODO/DONE styling
+   ========================================================================== */
+
+.todo {
+  color: var(--sacha-accent);
+  font-weight: 600;
+  font-family: var(--sacha-handwriting);
+}
+
+.done {
+  color: #2e7d32;
+  text-decoration: line-through;
+}
+
+.cancelled {
+  color: #c62828;
+  text-decoration: line-through;
+}
+
+.keyword {
+  color: var(--sacha-heading);
+  font-weight: 600;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--sacha-accent);
+}
+
+/* ==========================================================================
+   Admonitions - note/warning/tip boxes
+   ========================================================================== */
+
+.admonition {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--sacha-border-radius);
+  border-left: 4px solid;
+}
+
+.admonition-note {
+  background-color: rgba(33, 150, 243, 0.08);
+  border-color: #2196f3;
+}
+
+.admonition-warning {
+  background-color: rgba(255, 152, 0, 0.08);
+  border-color: #ff9800;
+}
+
+.admonition-tip {
+  background-color: rgba(76, 175, 80, 0.08);
+  border-color: #4caf50;
+}
+
+.admonition-danger {
+  background-color: rgba(244, 67, 54, 0.08);
+  border-color: #f44336;
+}
+
+.admonition-title {
+  font-family: var(--sacha-handwriting);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+/* ==========================================================================
+   Horizontal Rules - doodle dividers
+   ========================================================================== */
+
+hr {
+  border: none;
+  border-top: 2px dashed var(--sacha-border);
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+}
+
+hr::after {
+  content: '✽';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--sacha-paper-light);
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--sacha-border);
+  font-family: var(--sacha-handwriting);
+}
+
+/* ==========================================================================
+   Center and Example blocks
+   ========================================================================== */
+
+.center {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.example {
+  background-color: var(--sacha-code-bg);
+  border: 2px dashed var(--sacha-border);
+  border-radius: var(--sacha-border-radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-family: var(--sacha-handwriting);
+}
+
+.quote {
+  background-color: var(--sacha-code-bg);
+  border: 2px solid var(--sacha-border);
+  border-radius: var(--sacha-border-radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Footnotes
+   ========================================================================== */
+
+#footnotes {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px dotted var(--sacha-border);
+}
+
+.footnote {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footnum {
+  font-family: var(--sacha-handwriting);
+  color: var(--sacha-accent);
+  margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   Tags and Inline Tasks
+   ========================================================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--sacha-code-bg);
+  border: 1px solid var(--sacha-border);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: var(--sacha-accent);
+  font-family: var(--sacha-handwriting);
+}
+
+.inline-task {
+  font-family: var(--sacha-handwriting);
+  color: var(--sacha-accent);
+}
+
+/* ==========================================================================
+   Math and Verbatim
+   ========================================================================== */
+
+.math {
+  font-style: italic;
+  color: var(--sacha-heading);
+}
+
+.verbatim {
+  font-family: var(--sacha-code);
+  background-color: var(--sacha-code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Timestamps and Dates - handwriting font
+   ========================================================================== */
+
+.timestamp, .date {
+  font-family: var(--sacha-handwriting);
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.timestamp::before {
+  content: '✽ ';
+}
+
+/* ==========================================================================
+   Signature area
+   ========================================================================== */
+
+.signature {
+  font-family: var(--sacha-handwriting);
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  text-align: right;
+  transform: rotate(-0.5deg);
+  color: var(--sacha-heading);
+}
+
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+#table-of-contents {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--sacha-code-bg);
+  border-radius: var(--sacha-border-radius);
+  border: 1px solid var(--sacha-border);
+}
+
+#table-of-contents h2 {
+  font-family: var(--sacha-body);
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: var(--sacha-heading);
+  border-bottom: 2px dotted var(--sacha-accent);
+  padding-bottom: 0.5rem;
+}
+
+#table-of-contents ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#table-of-contents li {
+  margin: 0.5rem 0;
+  padding-left: 0;
+}
+
+#table-of-contents li::before {
+  display: none;
+}
+
+#table-of-contents ul ul {
+  margin-left: 1.5rem;
+}
+
+/* ==========================================================================
+   SVG and Images
+   ========================================================================== */
+
+.org-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.org-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--sacha-border-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Verse blocks
+   ========================================================================== */
+
+.verse {
+  font-family: var(--sacha-handwriting);
+  font-style: normal;
+  white-space: pre-wrap;
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--sacha-accent-light);
+  background-color: rgba(230, 155, 94, 0.05);
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: var(--sacha-border-radius);
+}
+
+/* ==========================================================================
+   PlantUML and Diagrams
+   ========================================================================== */
+
+.plantuml {
+  background-color: var(--sacha-code-bg);
+  border: 1px solid var(--sacha-border);
+  border-radius: var(--sacha-border-radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  html {
+    padding: 1rem;
+  }
+  
+  body {
+    padding: 2rem 2rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  code {
+    font-size: 0.85em;
+  }
+  
+  pre {
+    padding: 0.75rem;
+    font-size: 0.85em;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    padding: 0.5rem;
+  }
+  
+  :root {
+    --sacha-spacing: 1rem;
+  }
+  
+  body {
+    font-size: 15px;
+    padding: 1.5rem 1.5rem;
+  }
+  
+  blockquote {
+    padding: 0.75rem 1rem;
+  }
+  
+  .admonition {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .org-container {
+    box-shadow: none;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: underline;
+    border-bottom: 1px solid #999;
+  }
+  
+  pre, code {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .admonition, blockquote {
+    page-break-inside: avoid;
+  }
+  
+  .center {
+    page-break-inside: avoid;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.invisible {
+  visibility: hidden;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.src {
+  margin: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Org Mode Specific Classes
+   ========================================================================== */
+
+/* Org mode structural elements */
+#text * {
+  margin: 0;
+  padding: 0;
+}
+
+#text ul,
+#text ol {
+  margin: 1rem 0;
+}
+
+#text li {
+  margin: 0.5rem 0;
+}
+
+/* Org mode headings */
+.org-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Org mode properties - hidden by default in export */
+.org-properties {
+  display: none;
+}
+
+/* Org mode logbook */
+.org-logbook {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Org mode clock */
+.org-clock {
+  font-family: var(--sacha-code);
+  font-size: 0.85rem;
+  color: var(--sacha-accent);
+}

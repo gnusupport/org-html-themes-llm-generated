@@ -1,0 +1,342 @@
+#+TITLE: Life Operating System 2024
+#+AUTHOR: Your Name
+#+EMAIL: your.email@example.com
+#+DATE: [2024-05-20 Mon]
+#+STARTUP: overview content hidestars
+#+OPTIONS: toc:3 num:t
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+SETUPFILE: /home/data1/protected/Programming/git/org-html-themes/org/html-theme-cyber_renaissance_left-local.setup
+
+* Dashboard
+  :PROPERTIES:
+  :ID:       dashboard
+  :CUSTOM_ID: dashboard
+  :END:
+
+** ⭐ Weekly Review (Week 21)
+   :PROPERTIES:
+   :LAST_REVIEW: [2024-05-19 Sun]
+   :NEXT_REVIEW: [2024-05-26 Sun]
+   :CUSTOM_ID: weekly-review
+   :END:
+
+   #+BEGIN_CENTER
+   *Focus for this week:* Ship the MVP and establish a morning routine
+   #+END_CENTER
+
+   *** Wins from last week
+       - [X] Completed API documentation
+       - [X] 5 gym sessions
+       - [X] Read "Atomic Habits" (Chapter 4-7)
+
+   *** Blockers
+       - [ ] Still waiting for design assets from client
+       - [ ] Need to renew SSL certificate before Friday
+
+** 📅 Daily Agenda
+   :PROPERTIES:
+   :CATEGORY: Daily
+   :LOGGING:  lognoterepeat
+   :CUSTOM_ID: daily-agenda
+   :END:
+
+   - [ ] 08:00 Review 3 priority tasks for today
+   - [ ] 09:30 [[https://meet.google.com/][Standup meeting]]
+   - [ ] 14:00 [[file:projects.org][Deep work session]] (2 hours)
+   - [ ] 16:30 Process inbox and respond to DMs
+
+   #+BEGIN_SRC emacs-lisp :results silent
+   (setq my-daily-goal "Complete the feature branch")
+   #+END_SRC
+
+   #+BEGIN_QUOTE
+   "You do not rise to the level of your goals. You fall to the level of your systems." — James Clear
+   #+END_QUOTE
+
+** ☀️ Morning Reflection
+   - *Energy level:* 7/10
+   - *Intention:* Be present in conversations
+   - *Affirmation:* I build systems that serve me
+
+** 🌙 Evening Review
+   - *Accomplished:* ________________________________
+   - *Tomorrow's focus:* ____________________________
+   - *Lesson learned:* ______________________________
+
+* Projects
+  :PROPERTIES:
+  :CATEGORY: Work
+  :ID:       projects
+  :CUSTOM_ID: projects
+  :END:
+
+** PROJECT Website Redesign :WORK:HIGH:
+   :PROPERTIES:
+   :DEADLINE:  <2024-06-01 Sat>
+   :SCHEDULED: <2024-05-21 Tue>
+   :EFFORT:    20h
+   :PRIORITY:  A
+   :TRACKING:  LOGBOOK
+   :CUSTOM_ID: website-redesign
+   :ID:        website-redesign
+   :END:
+
+   :LOGBOOK:
+   CLOCK: [2024-05-18 Mon 09:00]--[2024-05-18 Mon 12:30] =>  3:30
+   CLOCK: [2024-05-19 Tue 14:00]--[2024-05-19 Tue 17:45] =>  3:45
+   :END:
+
+   *** TODO [0/4] Implementation
+       - [X] Research competitors (5h)
+       - [X] Create wireframes (4h)
+         - Note: Mobile-first approach approved by client
+       - [ ] Develop frontend components (6h)
+         - BLOCKED by design system
+       - [ ] [[#client-feedback][Client feedback loop]] (2h)  # Using CUSTOM_ID link
+
+   *** TODO [1/3] Deployment
+       - [ ] Set up staging environment
+       - [ ] Run Lighthouse audits
+       - [ ] Final deployment 🎯
+
+   #+BEGIN_EXAMPLE
+   Timeline estimate:
+   - Wireframes: May 15-18
+   - Dev: May 19-28
+   - QA: May 29-31
+   - Launch: June 1
+   #+END_EXAMPLE
+
+** PROJECT Learn Emacs Lisp :STUDY:LOW:
+   :PROPERTIES:
+   :CREATED:  [2024-05-01 Wed]
+   :EFFORT:   15h
+   :CUSTOM_ID: learn-elisp
+   :END:
+
+   - [ ] Read "An Introduction to Programming in Emacs Lisp" (Ch 1-4)
+   - [ ] Build custom capture template (example below)
+   - [ ] Understand [[info:elisp#Hooks][hooks and buffers]]
+
+   #+BEGIN_SRC emacs-lisp :tangle yes
+   ;; My custom capture template
+   (setq org-capture-templates
+         '(("t" "Todo" entry
+            (file+headline "inbox.org" "Tasks")
+            "* TODO %?\n  %U\n  %i")))
+   #+END_SRC
+
+   #+RESULTS:
+   : Template configured successfully
+
+** Client Feedback Loop :PROCESS:
+   :PROPERTIES:
+   :ID:       client-feedback
+   :CUSTOM_ID: client-feedback
+   :CREATED:  [2024-05-20 Mon]
+   :END:
+
+   Steps for client feedback:
+   1. Prepare prototype link
+   2. Schedule 30-min review call
+   3. Record feedback in [[#website-redesign][Website Redesign project notes]]
+   4. Update task board with action items
+
+* Knowledge Base
+  :PROPERTIES:
+  :CATEGORY: Notes
+  :ID:       knowledge-base
+  :CUSTOM_ID: knowledge-base
+  :END:
+
+** 🧠 Cognitive Science
+   :PROPERTIES:
+   :ROAM_REFS:  https://en.wikipedia.org/wiki/Cognitive_science
+   :CUSTOM_ID: cognitive-science
+   :END:
+
+   - *Spaced Repetition* :: Increasing intervals between reviews
+   - *Active Recall* :: Testing yourself rather than re-reading
+
+   See also: [[#learning-methods][Learning Methods section]]
+
+   #+BEGIN_ASIDE
+   Research shows active recall is 50% more effective than passive review.
+   #+END_ASIDE
+
+*** Flashcards
+    :PROPERTIES:
+    :DRILL: spaced_repetition
+    :END:
+
+    Q: What is the forgetting curve?
+    A: The exponential loss of information over time without reinforcement.
+
+** Learning Methods
+   :PROPERTIES:
+   :CUSTOM_ID: learning-methods
+   :END:
+
+   - *Active Recall* :: Testing yourself rather than re-reading
+   - *Spaced Repetition* :: Increasing intervals between reviews
+   - *Feynman Technique* :: Teach it to understand it
+
+** 💻 Programming Best Practices
+   *** Python List Comprehensions
+       :PROPERTIES:
+       :SOURCE: https://docs.python.org/3/tutorial/datastructures.html
+       :CUSTOM_ID: python-list-comprehensions
+       :END:
+
+       #+BEGIN_SRC python :results output
+       numbers = [1, 2, 3, 4, 5, 6]
+       even_squares = [n**2 for n in numbers if n % 2 == 0]
+       print(even_squares)  # [4, 16, 36]
+       #+END_SRC
+
+       #+RESULTS:
+       : [4, 16, 36]
+
+       For more, see [[https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions][official documentation]].
+
+   *** Git Aliases
+       #+BEGIN_SRC shell :results output
+       git config --global alias.co checkout
+       git config --global alias.br branch
+       git config --global alias.st status
+       #+END_SRC
+
+** 📝 Recipes
+   *** Coffee Recipe (V60)
+       :PROPERTIES:
+       :RATING:  ★★★★★
+       :PREP_TIME: 5 min
+       :CUSTOM_ID: v60-recipe
+       :END:
+
+       1. Rinse filter with hot water
+       2. Add 20g medium-fine coffee
+       3. Bloom with 40g water for 30s
+       4. Pour remaining 300g water slowly
+
+       See also: [[#pour-over-technique][Pour Over Technique]]
+
+** Pour Over Technique
+   :PROPERTIES:
+   :CUSTOM_ID: pour-over-technique
+   :END:
+
+   Advanced tips for [[#v60-recipe][V60 Recipe]]:
+   - Water temperature: 92-96°C
+   - Grind size: Medium-fine (like table salt)
+   - Total brew time: 3-3.5 minutes
+
+* Lists & Checklists
+  :PROPERTIES:
+  :CATEGORY: Personal
+  :CUSTOM_ID: lists
+  :END:
+
+** 🛒 Groceries
+   - [ ] Almond milk (unsweetened)
+   - [ ] Avocados (3x, ripe)
+   - [ ] Coffee beans (light roast)
+   - [ ] Sweet potatoes (2 lbs)
+
+   #+BEGIN_COMMENT
+   Check farmers market for organic eggs
+   #+END_COMMENT
+
+** ✅ Errands
+   - [ ] Pick up dry cleaning (before 6pm)
+   - [ ] Order mechanical keyboard switches
+   - [ ] Return library books (due May 25)
+
+** 📅 Upcoming Deadlines
+   | Task                 | Date            | Priority | Status    |
+   |----------------------+-----------------+----------+-----------|
+   | Submit tax returns   | <2024-04-15 Mon> | A        | DONE      |
+   | Dentist appointment  | <2024-05-25 Sat> | B        | TODO      |
+   | Renew passport       | <2024-07-10 Wed> | A        | WAITING   |
+   | Car maintenance      | <2024-06-01 Sat> | C        | NEXT      |
+
+   #+TBLFM: @2$3=@2$3
+   #+TBLFM: @3$3=@3$3
+
+** 📚 Reading List
+    :PROPERTIES:
+    :STATUS:  in-progress
+    :CUSTOM_ID: reading-list
+    :END:
+
+    - [X] [[https://www.goodreads.com/book/show/40121378-atomic-habits][Atomic Habits]] (James Clear)
+    - [ ] [[https://www.goodreads.com/book/show/44936.The_Myth_of_Sisyphus][The Myth of Sisyphus]] (Albert Camus)
+    - [ ] [[https://www.goodreads.com/book/show/36072.The_Soul_of_a_New_Machine][The Soul of a New Machine]] (Tracy Kidder)
+
+* Inbox
+  :PROPERTIES:
+  :CATEGORY: Inbox
+  :CUSTOM_ID: inbox
+  :END:
+
+  /Dump anything here. Refile with =C-c C-w= or =M-x org-refile=./
+
+  - Idea: Start a podcast about productivity systems
+  - [ ] Call Mom on Sunday
+  - Follow up: Job application status
+  - Interesting: https://news.ycombinator.com/item?id=40421455
+
+  #+BEGIN_SRC org :results drawer
+  ,* TODO Process this later
+  ,  This whole block will be captured as a template example
+  #+END_SRC
+
+* Habits
+  :PROPERTIES:
+  :LOGGING:  habit
+  :CUSTOM_ID: habits
+  :END:
+
+  ** TODO Drink 2L of water
+     :PROPERTIES:
+     :STYLE:    habit
+     :END:
+     SCHEDULED: <2024-05-20 Mon .+1d>
+     - State "DONE" from "TODO" [2024-05-19 Sun 10:00]
+
+  ** TODO Morning meditation
+     :PROPERTIES:
+     :STYLE:    habit
+     :END:
+     SCHEDULED: <2024-05-20 Mon .+1d>
+
+  ** TODO Read 30 minutes
+     :PROPERTIES:
+     :STYLE:    habit
+     :END:
+     SCHEDULED: <2024-05-20 Mon .+1d>
+
+* Archive
+  :PROPERTIES:
+  :ARCHIVE:  %s_archive::* Old Tasks
+  :CUSTOM_ID: archive
+  :END:
+
+  ** DONE Initial setup
+     CLOSED: [2024-05-01 Wed]
+     - Created org file structure
+     - Configured basic properties
+
+* Footnotes
+
+[fn:1] Using CUSTOM_ID links is more reliable than headline text links
+[fn:2] ID links work across files, CUSTOM_ID works within the same file
+
+#+BEGIN_HTML
+<!-- Custom footer for HTML export -->
+<hr />
+<p>Generated from Life Operating System — 2024</p>
+<p>Built with Org-mode ❤️</p>
+#+END_HTML

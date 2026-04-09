@@ -1,0 +1,30 @@
+#+TITLE: Magazine Theme Test
+#+OPTIONS: toc:t
+#+SETUPFILE: org/html-theme-magazine-local.setup
+
+* Introduction
+
+This is a test document to verify the magazine theme is working correctly.
+
+* Code Example
+
+Here is a code block:
+
+#+BEGIN_SRC emacs-lisp
+(defun hello-world ()
+  "Say hello."
+  (message "Hello, World!"))
+#+END_SRC
+
+* List Example
+
+- First item
+- Second item
+- Third item
+
+* Table Example
+
+| Column 1 | Column 2 |
+|----------|----------|
+| Data A   | Data B   |
+| Data C   | Data D   |

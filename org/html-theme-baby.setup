@@ -1,0 +1,6 @@
+# -*- mode: org; -*-
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/css/baby_theme/css/baby.css"/>
+
+#+HTML_HEAD: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap"/>

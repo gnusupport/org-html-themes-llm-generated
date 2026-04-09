@@ -1,0 +1,160 @@
+#+TITLE: Cyber Renaissance Left - Ornate Neon Demo
+#+AUTHOR: Renaissance Digital Artist
+#+DESCRIPTION: Baroque meets cyberpunk with ornate borders, filigree, and neon glow
+#+SETUPFILE: ../org/html-theme-cyber_renaissance_left-local.setup
+
+* The Cyber Renaissance (Sidebar)
+** Introduction
+Welcome to the Cyber Renaissance documentation theme - where ornate baroque aesthetics meet futuristic neon cyberpunk.
+
+** Navigation
+*** Main Sections
+**** Getting Started
+**** Design Elements
+**** Typography
+**** Code Examples
+
+*** Advanced Topics
+**** Ornate Borders
+**** Neon Effects
+**** Filigree Patterns
+**** Color Theory
+
+** Content
+*** Getting Started
+The Cyber Renaissance theme combines the elegance of Renaissance ornamentation with the vibrant energy of neon cyberpunk aesthetics.
+
+**** Key Features
+- Ornate decorative borders with CSS
+- Neon glow effects on headings and links
+- Intricate filigree patterns in backgrounds
+- Deep purple and magenta color palette
+- Left sidebar with decorative header
+
+**** Example Code
+
+#+BEGIN_SRC python
+def create_neon_effect(element):
+    """Apply neon glow to decorative elements."""
+    return {
+        'box-shadow': '0 0 15px rgba(255, 0, 255, 0.6)',
+        'text-shadow': '0 0 10px rgba(255, 0, 255, 0.8)'
+    }
+#+END_SRC
+
+*** Design Elements
+**** Ornate Borders
+Borders feature double lines with neon color accents:
+
+#+BEGIN_SRC css
+border: 3px double var(--neon-magenta);
+box-shadow: 0 0 10px var(--neon-magenta),
+            inset 0 0 20px rgba(255,0,255,0.2);
+#+END_SRC
+
+**** Filigree Patterns
+Background patterns use radial gradients to create delicate ornamentation:
+
+#+BEGIN_SRC css
+background-image: radial-gradient(
+    circle,
+    rgba(212,175,55,0.03) 1px,
+    transparent 1px
+);
+background-size: 30px 30px;
+#+END_SRC
+
+**** Neon Glow Effects
+All interactive elements feature subtle neon glows:
+
+- Magenta glow: #ff00ff
+- Cyan glow: #00ffff  
+- Gold glow: #d4af37
+
+*** Typography
+The theme uses three font families for distinct purposes:
+
+1. **Cinzel Decorative** - Ornate headings with classical feel
+2. **Crimson Text** - Readable body text in serif
+3. **Orbitron** - Futuristic accent text
+
+**** Heading Styles
+
+| Level | Font              | Color      | Effect        |
+|-------+-------------------+------------+---------------|
+| H1    | Cinzel Decorative | Gold       | Strong glow   |
+| H2    | Cinzel Decorative | Magenta    | Side glow     |
+| H3    | Cinzel Decorative | Cyan       | Border glow   |
+| H4    | Orbitron          | Violet     | Uppercase     |
+
+*** Color Palette
+The Cyber Renaissance color scheme balances deep backgrounds with vibrant neon accents:
+
+| Color         | Hex Code  | Usage              |
+|---------------+-----------+--------------------|
+| Deep Purple   | #1a0a2e   | Background base    |
+| Neon Magenta  | #ff00ff   | Primary accent     |
+| Electric Blue | #00ffff   | Secondary accent   |
+| Metallic Gold | #d4af37   | Decorative borders |
+| Rich Violet   | #9b59b6   | Highlight text     |
+
+**** Advanced Topics
+*** Ornate Borders
+Borders use multiple techniques for rich decoration:
+
+- Double borders with pseudo-elements
+- Corner ornaments using ::before and ::after
+- Gradient backgrounds on decorative lines
+- Glow effects on border colors
+
+*** Neon Effects
+Multiple glow variations create depth:
+
+#+BEGIN_SRC javascript
+// Glow effect variations
+const glows = {
+  magenta: '0 0 15px rgba(255, 0, 255, 0.6)',
+  blue: '0 0 15px rgba(0, 255, 255, 0.6)',
+  gold: '0 0 15px rgba(212, 175, 55, 0.6)'
+};
+#+END_SRC
+
+*** Filigree Patterns
+Intricate backgrounds using CSS gradients:
+
+1. Radial gradient circles for dots
+2. Repeating linear gradients for lines
+3. SVG filters for noise texture
+4. Combined layers for depth
+
+*** Color Theory
+Understanding the color relationships:
+
+- **Analogous**: Purple-magenta-blue harmony
+- **Complementary**: Gold against purple
+- **Triadic**: Magenta-cyan-gold balance
+
+** Tips and Techniques
+*** Design Best Practices
+> "Ornamentation should enhance, not overwhelm the content."
+
+*** Accessibility Considerations
+- Ensure WCAG AA contrast ratios (4.5:1 minimum)
+- Use text shadows sparingly on body text
+- Provide sufficient color contrast for links
+- Maintain readable font sizes (16px+ base)
+
+*** Performance Tips
+- Limit number of glow effects on same element
+- Use CSS variables for consistent theming
+- Optimize gradient backgrounds for mobile
+
+** Gallery
+References for further inspiration:
+- Baroque architectural details
+- Cyberpunk film aesthetics
+- Victorian typography
+- Modern neon signage
+
+** Conclusion
+The Cyber Renaissance theme demonstrates how classical ornamentation and futuristic neon aesthetics can coexist beautifully in web design.

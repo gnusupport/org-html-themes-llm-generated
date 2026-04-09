@@ -1,0 +1,7 @@
+# -*- mode: org; -*-
+
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src/executive_theme/css/executive.css"/>

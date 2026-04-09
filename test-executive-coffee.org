@@ -1,0 +1,34 @@
+#+TITLE: Executive Theme Test
+#+SETUPFILE: /home/data1/protected/Programming/git/org-html-themes/org/html-theme-executive-local.setup
+
+* 3.4. Recipes
+
+** Coffee Recipe (V60)
+
+:PROPERTIES:
+:RATING: ★★★★★
+:PREPTIME: 5 min
+:CUSTOMID: v60-recipe
+:END:
+
+Brewing the perfect cup of coffee using the V60 method.
+
+*** Ingredients
+
+- 20g freshly ground coffee beans
+- 300ml water at 96°C
+- V60 dripper and filter
+
+*** Steps
+
+1. Boil water to 96°C
+2. Rinse filter with hot water
+3. Add medium-fine ground coffee
+4. Pour 60ml water in circular motion (bloom for 30s)
+5. Slowly pour remaining water in circles
+6. Total brew time: 2:30-3:00 minutes
+
+*** Notes
+
+> "The best coffee comes from careful attention to detail."  
+> — Howard Schultz

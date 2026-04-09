@@ -1,0 +1,422 @@
+#+TITLE: Executive Business Report
+#+AUTHOR: John Executive
+#+DATE: April 9, 2026
+#+SETUPFILE: ./org/html-theme-sacha-local.setup
+
+* Executive Summary
+
+This comprehensive business report provides an overview of key performance indicators and strategic initiatives for Q1 2026.
+
+**Key Highlights:**
+- Revenue growth of 23% year-over-year
+- Successful launch of three new product lines
+- Expansion into European markets
+- Employee satisfaction at all-time high
+
+* Q1 Financial Performance
+
+**Revenue Analysis**
+
+| Metric              | Q1 2026 | Q1 2025 | Change  |
+|---------------------+---------+---------+---------|
+| Total Revenue       |  $12.5M |  $10.1M |   +23.8%|
+| Operating Income    |   $3.2M |   $2.4M |   +33.3%|
+| Net Profit Margin   |    25.6%|    23.8%|    +1.8%|
+| EBITDA              |   $4.1M |   $3.3M |   +24.2%|
+
+**Expense Breakdown**
+
+#+BEGIN_SRC python
+def calculate_profit_margin(revenue, expenses):
+    """Calculate net profit margin percentage."""
+    profit = revenue - expenses
+    margin = (profit / revenue) * 100
+    return margin
+
+# Q1 2026 calculations
+revenue = 12500000
+expenses = 9300000
+margin = calculate_profit_margin(revenue, expenses)
+print(f"Net Profit Margin: {margin:.1f}%")
+#+END_SRC
+
+* Strategic Initiatives
+
+**Project Alpha** - Market Expansion
+- TODO Launch in UK market by June 2026
+- DOING Establish German subsidiary
+- DONE Complete regulatory compliance review
+- DONE Hire regional management team
+
+**Project Beta** - Product Innovation  
+- TODO Release mobile app version 2.0
+- NEXT Conduct user testing phase
+- NEXT Implement feedback improvements
+
+**Project Gamma** - Operational Excellence
+- DONE Implement new ERP system
+- DONE Train all staff on new processes
+- DONE Achieve 99.9% uptime SLA
+
+* Risk Assessment
+
+**High Priority Risks**
+
+| Risk Factor         | Impact  | Probability | Mitigation Status |
+|---------------------+---------+-------------+-------------------|
+| Supply Chain        | High    | Medium      | Active Monitoring |
+| Regulatory Changes  | Medium  | Low         | Prepared          |
+| Competitive Pressure| High    | High        | Strategic Planning|
+
+**Risk Mitigation Strategies**
+
+> "The best risk management is proactive planning and continuous monitoring."  
+> — Sarah Johnson, Chief Risk Officer
+
+* Action Items
+
+**Immediate Actions (This Week)**
+- [ ] Review Q2 budget allocation
+- [ ] Schedule board meeting for May 15
+- [ ] Approve marketing campaign budgets
+- [ ] Finalize hiring plan for engineering team
+
+**Short-term Actions (This Month)**
+- [X] Complete vendor contract negotiations ✓
+- [X] Launch customer satisfaction survey ✓
+- [X] Publish Q1 earnings press release ✓
+
+* Technology Infrastructure
+
+**System Performance Metrics**
+
+#+BEGIN_SRC bash
+#!/bin/bash
+# Server health check script
+echo "Checking system health..."
+echo "CPU Usage: $(top -bn1 | grep "Cpu(s)" | awk '{print $2}')"
+echo "Memory Usage: $(free -h | awk '/^Mem/ {print $3 "/" $2}')"
+echo "Disk Usage: $(df -h / | awk '/^\/dev/ {print $5}")'
+#+END_SRC
+
+**Cloud Migration Progress**
+
+- DONE Migrate customer database to AWS
+- DONE Implement Kubernetes orchestration
+- TODO Complete microservices refactoring
+- NEXT Set up CI/CD pipelines
+
+* Employee Development
+
+**Training Programs Completed**
+
+1. Leadership Development Workshop
+2. Advanced Excel & Data Analysis
+3. Project Management Certification
+4. Diversity & Inclusion Training
+
+**Performance Review Schedule**
+
+#+BEGIN_QUOTE
+Our people are our greatest asset. Investing in their growth ensures our continued success.
+#+END_QUOTE
+
+* Appendices
+
+**Appendix A: Full Financial Statements**
+Available upon request.
+
+**Appendix B: Technical Documentation**
+Located in internal wiki.
+
+**Appendix C: Market Research Data**
+Compiled by External Insights LLC.
+
+* Meeting Notes
+
+**Board Meeting - March 2026**
+
+*Attendees:*
+- Board Members: 8
+- Executive Team: 5
+- External Advisors: 2
+
+*Key Decisions:*
+1. Approved Q2 budget allocation
+2. Authorized European expansion
+3. Approved executive compensation plan
+4. Scheduled investor relations day
+
+**Action Items from Meeting:**
+
+- TODO Prepare investor presentation by April 20
+- DONE Distribute meeting minutes
+- DOING Finalize board resolution documents
+- TODO Schedule follow-up strategy session
+
+* Contact Information
+
+#+AUTHOR: John Executive
+#+EMAIL: john.executive@company.com
+#+PHONE: +1 (555) 123-4567
+
+**Office Hours:** Monday - Friday, 9:00 AM - 5:00 PM EST
+
+---
+*Confidential - For Internal Use Only*
+Document Version: 1.2 | Last Updated: April 9, 2026
+
+* Admonitions & Notes
+
+** Important Notice
+
+NOTE: This is an important note that requires attention.
+
+** WARNING - Critical Alert
+
+CAUTION: This is a warning that needs careful consideration.
+
+** TIP - Helpful Hint
+
+TIP: This is a helpful tip for better understanding.
+
+** DANGER - Security Alert
+
+DANGER: This is a critical security concern.
+
+* Alignment Examples
+
+** Center Aligned Content
+
+#+CENTER: This text is center aligned and looks professional.
+
+** Right Aligned Content
+
+#+RIGHT: This text is right aligned for emphasis.
+
+** Left Aligned Content
+
+#+LEFT: This text is left aligned (default).
+
+* Verse & Poetry
+
+#+BEGIN_VERSE
+The road not taken
+Two roads diverged in a yellow wood,
+And sorry I could not travel both
+And be one traveler, long I stood
+And looked down one as far as I could
+#+END_VERSE
+
+* Mathematical Expressions
+
+The quadratic formula is:
+
+#+BEGIN_MATH
+x = (-b ± √(b² - 4ac)) / 2a
+#+END_MATH
+
+* Footnotes
+
+This is a sentence with a footnote reference.[1]
+
+And another with multiple references.[2][3]
+
+[1] First footnote explanation
+[2] Second footnote explanation  
+[3] Third footnote explanation
+
+* Tags & Flags
+
+This is an example with [[#tag][tags]] and a [[#flag][flagged item]].
+
+* Inline Task
+
+#+BEGIN_INLINETASK
+Title: Review Document
+Deadline: 2026-04-15
+Assigned: John Executive
+Description: Please review all sections for accuracy.
+#+END_INLINETASK
+
+* Definition Lists
+
+Term:: Definition of the term
+      Additional explanation if needed.
+
+Another Term:: Simple definition
+
+* Emphasis Examples
+
+*Bold text* for emphasis
+_Italic text_ for notes
+__Underline__ for important items
+
+* Code Examples
+
+** Shell Commands
+
+#+BEGIN_SRC bash
+#!/bin/bash
+# Server monitoring script
+echo "Checking system status..."
+uptime
+df -h
+#+END_SRC
+
+** Python Code
+
+#+BEGIN_SRC python
+def executive_report(data):
+    """Generate executive summary report."""
+    return {
+        'status': 'success',
+        'metrics': calculate_kpis(data),
+        'recommendations': generate_actions(data)
+    }
+#+END_SRC
+
+* Tables with Special Formatting
+
+#+BEGIN_CENTER
+| Feature          | Status  | Priority |
+|------------------+---------+----------|
+| Security Audit   | DONE    | Critical |
+| Performance Test | TODO    | High     |
+| User Testing     | DOING   | Medium   |
+#+END_CENTER
+
+* Admonitions & Notes
+
+** Important Notice
+
+NOTE: This is an important note that requires attention.
+
+** WARNING - Critical Alert
+
+CAUTION: This is a warning that needs careful consideration.
+
+** TIP - Helpful Hint
+
+TIP: This is a helpful tip for better understanding.
+
+** DANGER - Security Alert
+
+DANGER: This is a critical security concern.
+
+* Alignment Examples
+
+** Center Aligned Content
+
+#+CAPTION: Center aligned content
+
+** Right Aligned Content
+
+** Left Aligned Content
+
+* Verse & Poetry
+
+#+BEGIN_VERSE
+The road not taken
+Two roads diverged in a yellow wood,
+And sorry I could not travel both
+And be one traveler, long I stood
+And looked down one as far as I could
+#+END_VERSE
+
+* Mathematical Expressions
+
+The quadratic formula is:
+
+#+BEGIN_MATH
+x = (-b ± √(b² - 4ac)) / 2a
+#+END_MATH
+
+* Footnotes
+
+This is a sentence with a footnote reference.[1]
+
+And another with multiple references.[2][3]
+
+[1] First footnote explanation
+[2] Second footnote explanation  
+[3] Third footnote explanation
+
+* Tags & Flags
+
+This is an example with tags and flagged items.
+
+* Inline Task
+
+#+BEGIN_INLINETASK
+Title: Review Document
+Deadline: 2026-04-15
+Assigned: John Executive
+Description: Please review all sections for accuracy.
+#+END_INLINETASK
+
+* Definition Lists
+
+Term:: Definition of the term
+      Additional explanation if needed.
+
+Another Term:: Simple definition
+
+* Emphasis Examples
+
+*Bold text* for emphasis
+_Italic text_ for notes
+__Underline__ for important items
+
+* Code Examples
+
+** Shell Commands
+
+#+BEGIN_SRC bash
+#!/bin/bash
+# Server monitoring script
+echo "Checking system status..."
+uptime
+df -h
+#+END_SRC
+
+** Python Code
+
+#+BEGIN_SRC python
+def executive_report(data):
+    """Generate executive summary report."""
+    return {
+        'status': 'success',
+        'metrics': calculate_kpis(data),
+        'recommendations': generate_actions(data)
+    }
+#+END_SRC
+
+
+* 3.4. Recipes
+
+** Coffee Recipe (V60)
+
+> ⭐ **Rating:** ★★★★★  |  ⏱️ **Time:** 5 min  |  #**ID:** v60-recipe
+
+Brewing the perfect cup of coffee using the V60 method.
+
+*** Ingredients
+
+- 20g freshly ground coffee beans
+- 300ml water at 96°C
+- V60 dripper and filter
+
+*** Steps
+
+1. Boil water to 96°C
+2. Rinse filter with hot water
+3. Add medium-fine ground coffee
+4. Pour 60ml water in circular motion (bloom for 30s)
+5. Slowly pour remaining water in circles
+6. Total brew time: 2:30-3:00 minutes
+
+*** Notes
+
+> "The best coffee comes from careful attention to detail."  
+> — Howard Schultz

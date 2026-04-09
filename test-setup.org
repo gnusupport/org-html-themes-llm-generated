@@ -1,0 +1,5 @@
+#+TITLE: Test Setup File Loading
+#+SETUPFILE: org/html-theme-aurora_plain-local.setup
+
+* Test Heading
+This is a test.

@@ -1,0 +1,281 @@
+#+TITLE: Aurora Left Theme - Test Document
+#+AUTHOR: Aurora Navigator
+#+DATE: [2024-12-19]
+#+STARTUP: overview
+#+OPTIONS: toc:2
+#+SETUPFILE: org/html-theme-aurora_left-local.setup
+
+* 🌌 Aurora Left Sidebar Theme
+:PROPERTIES:
+:CATEGORY: Aurora Themes
+:END:
+
+Welcome to the Aurora Left theme - featuring the same flowing aurora aesthetics as the plain version, with the addition of a fixed left sidebar containing the table of contents with aurora gradient styling.
+
+** [ ] Experience the sidebar navigation :TODO:
+   SCHEDULED: <2024-12-20>
+   
+   - [ ] Observe the left sidebar with aurora gradient
+   - [ ] Navigate using the table of contents
+   - [ ] Notice the glowing effects on sidebar links
+   - [ ] Test responsive behavior on smaller screens
+
+   #+BEGIN_QUOTE
+   "The aurora sidebar guides your journey through the forest of knowledge."
+   #+END_QUOTE
+
+** [X] Verify left sidebar layout :TODO:
+   - [X] Fixed 300px width sidebar
+   - [X] Aurora gradient sidebar background
+   - [X] Content offset from sidebar
+   - [X] Responsive collapse on mobile
+
+** [X] Confirm shared aurora aesthetics :TODO:
+   - [X] Same gradient background
+   - [X] Aurora text effects
+   - [X] Glowing effects
+   - [X] Flowing animations
+
+* 🎨 Sidebar Features
+:PROPERTIES:
+:CATEGORY: Design
+:END:
+
+The left sidebar in the Aurora Left theme brings several enhancements:
+
+** Aurora Gradient Background**
+The sidebar features a vertical gradient from deep purple to violet, creating a stunning backdrop for navigation.
+
+** Animated Glow Effects**
+Sidebar links glow with cyan and purple hues on hover, matching the overall aurora theme.
+
+** Active Section Highlight**
+The currently viewed section is highlighted with a purple background and glow effect.
+
+** Cosmic Icon**
+The sidebar title includes a cosmic emoji (🌌) with a cyan glow effect.
+
+* 📝 Task Management
+:PROPERTIES:
+:CATEGORY: Tasks
+:END:
+
+This section demonstrates TODO items with aurora styling in the context of a sidebar layout:
+
+** TODO Navigate sidebar sections**
+   SCHEDULED: <2024-12-21>
+   
+   - [ ] Click through all sections
+   - [ ] Verify active section highlight
+   - [ ] Test smooth scrolling
+   - [ ] Check mobile collapse behavior
+
+** DOING Test responsive breakpoints**
+   The sidebar transforms to a top navigation bar on screens smaller than 768px.
+
+** DONE Configure theme settings**
+   Initial setup completed with cyan styling.
+
+** NEXT Test cross-browser compatibility**
+   Chrome, Firefox, Safari, and Edge.
+
+** NA Document mobile behaviors**
+   Future enhancement.
+
+* 💻 Code Examples
+:PROPERTIES:
+:CATEGORY: Development
+:END:
+
+** CSS Grid Layout Alternative Note **
+This theme avoids CSS Grid as per project standards, using flexbox for the sidebar layout instead.
+
+#+BEGIN_SRC css
+/* Aurora Left Sidebar Layout */
+#container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+#table-of-contents {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(180deg, 
+    rgba(15, 12, 41, 0.98) 0%, 
+    rgba(48, 43, 99, 0.95) 40%, 
+    rgba(123, 44, 191, 0.9) 100%);
+  overflow-y: auto;
+}
+
+#content {
+  margin-left: 300px;
+  padding: 3.5rem 2.5rem;
+  max-width: calc(100% - 300px - 4rem);
+}
+#+END_SRC
+
+** JavaScript for Active Section Detection **
+#+BEGIN_SRC javascript
+// Highlight active section in sidebar
+function highlightActiveSection() {
+  const sections = document.querySelectorAll('#content h2, #content h3');
+  const navLinks = document.querySelectorAll('#table-of-contents a');
+  
+  sections.forEach(section => {
+    section.addEventListener('scroll', () => {
+      const rect = section.getBoundingClientRect();
+      
+      if (rect.top <= 150 && rect.bottom >= 150) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`#table-of-contents a[href="#${section.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  });
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', highlightActiveSection);
+#+END_SRC
+
+* 📊 Data Tables
+:PROPERTIES:
+:CATEGORY: Tables
+:END:
+
+Comparing the two Aurora themes:
+
+| Aspect | Aurora Plain | Aurora Left |
+|--------+--------------+-------------|
+| Sidebar | ❌ Minimal | ✅ Fixed 300px |
+| Layout | Centered | Flex container |
+| Navigation | Scroll | Fixed sidebar |
+| Best for | Reading | Navigation-heavy |
+| Mobile | Simple collapse | Top bar transform |
+| Content width | 900px | Flexible offset |
+
+* 🎯 Project Progress
+:PROPERTIES:
+:CATEGORY: Projects
+:END:
+
+** TODO Aurora Left theme development**
+   :PROPERTIES:
+   :PRIORITY: A
+   :END:
+   
+   SCHEDULED: <2024-12-19>
+   
+   - [X] Create left sidebar CSS
+   - [X] Implement gradient sidebar background
+   - [X] Add active section highlighting
+   - [ ] Add sidebar animations
+   - [X] Implement responsive collapse
+   - [X] Write test document
+
+** DOING Test sidebar scroll behavior**
+   Ensuring smooth navigation experience.
+
+** DONE Create shared aurora components**
+   Reusable gradient and glow effects.
+
+* 📅 Upcoming Tasks
+:PROPERTIES:
+:CATEGORY: Schedule
+:END:
+
+- TODO Complete sidebar animations |<2024-12-22>
+- TODO Test on various devices |<2024-12-23>
+- DOING Document usage guidelines |<2024-12-24>
+- TODO Final review and polish |<2024-12-26>
+- DONE Initial sidebar implementation |<2024-12-19>
+
+* 📋 Design Notes
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+** Layout Philosophy **
+The left sidebar design prioritizes easy navigation while maintaining the beautiful aurora aesthetic. Users can always see where they are and how to move through the content.
+
+** Key Differences from Plain Theme **
+1. Sidebar with fixed 300px width
+2. Vertical aurora gradient in sidebar
+3. Active section highlighting
+4. Content offset from sidebar
+5. Responsive top bar on mobile
+
+** Typography Consistency **
+Both Aurora themes use the same font stack:
+- Orbitron for headings (futuristic)
+- Exo 2 for body text (tech-readable)
+- Fira Code for code (programmer-friendly)
+
+** Color Palette **
+Both themes share the same aurora colors:
+- Deep background: #0F0C29 → #302B63 → #24243E
+- Cyan accent: #00D4FF
+- Purple accent: #9D4EDD
+- Pink accent: #FF006E
+
+* 🔬 Technical Implementation
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+** Flexbox Layout **
+The theme uses CSS Flexbox for the sidebar-content container, avoiding CSS Grid as per project standards.
+
+** Fixed Positioning **
+The sidebar uses fixed positioning to stay visible while scrolling through long documents.
+
+** Responsive Transform **
+At 768px breakpoint, the sidebar transforms from a left column to a top navigation bar, maintaining usability on mobile devices.
+
+** Performance Considerations **
+- GPU-accelerated animations
+- Minimal repaints on scroll
+- Optimized gradient rendering
+- Respects prefers-reduced-motion
+
+* 📝 Additional Test Content
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+** Nested Lists **
+The sidebar handles nested lists gracefully:
+
+- Main category 1
+  - Sub-item A
+  - Sub-item B
+    - Deep nested item
+- Main category 2
+  - Another sub-item
+
+** Quote Block **
+#+BEGIN_QUOTE
+  "Navigation becomes art when the aurora guides the way."
+  
+  — Aurora Theme Philosophy
+#+END_QUOTE
+
+** Timestamps **
+- Created: <2024-12-19 Thu>
+- Last modified: <2024-12-19 Thu>
+- Deadline: <2024-12-30 Sun>
+
+* 🌟 Final Thoughts
+:PROPERTIES:
+:CATEGORY: Reference
+:END:
+
+The Aurora Left theme combines the ethereal beauty of the aurora plain aesthetic with practical navigation. Whether you're reading a long document or navigating complex documentation, the aurora sidebar provides both beauty and functionality.
+
+#+BEGIN_QUOTE
+  "In the aurora of knowledge, let the left sidebar guide your exploration."
+#+END_QUOTE

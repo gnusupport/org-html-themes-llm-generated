@@ -1,0 +1,79 @@
+===============================================================================
+                        MAGAZINE THEME - VISUAL PREVIEW
+===============================================================================
+
+📄 TWO-COLUMN MAGAZINE LAYOUT
+--------------------------------------------------------------------------------
+┌─────────────────────────────────────────────────────┬──────────────────────┐
+│                                                     │  📋 CONTENTS        │
+│  📰 MY AMAZING ARTICLE                              │                     │
+│  A demonstration of the Magazine theme              │  • Getting Started  │
+│                                                     │  • Features         │
+│  This is a demonstration...                         │  • Code Examples    │
+│                                                     │  • Conclusion       │
+│  ## Getting Started                                 │                     │
+│                                                     │  ℹ️ ABOUT           │
+│  Here's how easy it is to write beautiful           │                     │
+│  content:                                           │  Jane Developer     │
+│                                                     │  April 9, 2024      │
+│  ```                                                │                     │
+│  (defun hello-world ()                              │                     │
+│    "Say hello!")                                    │                     │
+│  ```                                                │                     │
+│                                                     │                     │
+│  > Beautiful quote                                  │                     │
+│                                                     │                     │
+└─────────────────────────────────────────────────────┴──────────────────────┘
+
+🎨 COLOR PALETTE
+--------------------------------------------------------------------------------
+Primary Blue:    #2c3e50  (dark blue-gray for headings)
+Accent Orange:   #e67e22  (highlights, borders, decorations)
+Background:      #fdf6e3  (warm cream/parchment)
+Text:            #34495e  (dark gray for readability)
+Code Background: #faf8f0  (light cream for code blocks)
+
+🔤 TYPOGRAPHY
+--------------------------------------------------------------------------------
+Headings:    Merriweather (serif) - elegant, editorial feel
+Body Text:   Inter (sans-serif) - clean, modern readability
+Code:        JetBrains Mono - professional monospace
+
+📐 LAYOUT FEATURES
+--------------------------------------------------------------------------------
+✓ Sticky right sidebar with TOC and postamble
+✓ Gradient header banner (dark blue gradient)
+✓ Colored left border on H2/H3/H4 headings
+✓ Drop cap on first paragraph
+✓ Justified text alignment
+✓ Horizontal tab navigation
+✓ Custom bullet styles (• ◦ ▪)
+✓ Numbered lists with accent colors
+
+🎯 KEY VISUAL ELEMENTS
+--------------------------------------------------------------------------------
+[📌] H2 Heading with orange left border
+[📌] H3 Heading with orange left border  
+[📌] H4 Heading with orange left border
+[📋] TODO item - yellow background
+[✓]  DONE item - green background with strikethrough
+[📝] Inline task box - cream background with border
+[📊] Table - striped rows with hover effect
+[💬] Blockquote - left border, decorative quotes
+[🔧] Code block - left accent border, syntax highlighting
+
+📱 RESPONSIVE DESIGN
+--------------------------------------------------------------------------------
+Desktop:  Two columns (content + 320px sidebar)
+Tablet:   Single column with sidebar below
+Mobile:   Stacked layout, simplified navigation
+
+===============================================================================
+                        OPEN IN BROWSER TO SEE FULL THEME!
+===============================================================================
+
+🌐 View at: http://localhost:8888/test-magazine.html
+📁 File: sample/test-magazine.html
+🎨 CSS: src/magazine_theme/css/magazine.css
+
+===============================================================================
