@@ -1,7 +1,7 @@
 #+TITLE:     How to effortlessly transform your Org mode files into stunning HTML in just 2 minutes
-#+AUTHOR:    Fabrice Niessen
+#+AUTHOR:    Fabrice Niessen (Original)
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
-#+DESCRIPTION: Org-HTML export made simple.
+#+DESCRIPTION: Org-HTML export made simple with 20+ themes.
 #+KEYWORDS:  org-mode, export, html, theme, style, css, js, bigblow
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 toc:t num:2
@@ -27,9 +27,24 @@ documents. Use these themes to elevate your document's visual design, create
 professional-looking reports, and impress colleagues with polished, visually
 appealing content.
 
+This repository is a [[https://github.com/fniessen/org-html-themes][fork]] of the original project, significantly expanded with
+20+ professional themes created with the assistance of an LLM (Qwen3.5-35B-A3B-UD-Q4_K_M.gguf).
+
 #+html: <a href="https://mastodon.social/share?text=Check%20out%20these%20amazing%20Org-HTML%20themes!%20https://github.com/fniessen/org-html-themes" target="_blank" rel="noopener noreferrer">Share on Mastodon</a>
 
-Follow [[https://mastodon.social/@fniessen][@fniessen on Mastodon]] for the latest updates on Org-HTML themes!
+Follow [[https://mastodon.social/@fniessen][@fniessen on Mastodon]] for the latest updates on the original project!
+
+** Acknowledgments
+
+Thank you to Richard Stallman and the GNU Project for creating Emacs and Org mode,
+which make this work possible. This project honors the [[https://www.gnu.org/philosophy/freedom.html][Four Software Freedoms]]:
+
+1. *Freedom 0*: The freedom to run the program as you wish, for any purpose.
+2. *Freedom 1*: The freedom to study how the program works, and change it so it does your computing as you wish.
+3. *Freedom 2*: The freedom to redistribute copies so you can help others.
+4. *Freedom 3*: The freedom to distribute copies of your modified versions to others.
+
+Emacs and Org mode are part of the [[https://www.gnu.org/s/emacs][GNU Project]]. Visit [[https://www.gnu.org/s/emacs][gnu.org/s/emacs]] to learn more about GNU Emacs.
 
 ** Requirements
 
@@ -37,10 +52,83 @@ Org mode version 8 (or later) is required.
 
 If such a version is not bundled with your Emacs, install one from ELPA.
 
+* What's New in This Fork
+
+This fork significantly expands the original org-html-themes project with 20+
+professional themes, including:
+
+** Newest Themes (April 2026):**
+
+1. **⚡ Executive Theme** - Business Professional
+   - Comprehensive CSS coverage (40+ selectors)
+   - Navy & gold professional color scheme
+   - Full Org-mode element support (code blocks, admonitions, tables, etc.)
+   - Print-ready output
+   - Mobile responsive
+
+2. **🤖 AI Graph Theme** - Interactive Force-Directed Graph
+   - D3.js-powered graph visualization
+   - Click nodes to navigate to document sections
+   - Two-column layout with sidebar navigation
+   - Enhanced TODO/DONE items with prominent styling
+   - Perfect for AI/ML documentation and technical projects
+
+** Previous Additions (December 2024):**
+
+3. **🍼 Baby Theme** - Soft, Playful, Adorable
+   - Pastel colors (pink, blue, yellow, purple)
+   - Cute emoji decorations (🧸 🎈 🧁 🐣 🌈)
+   - Bouncing TODO items with sparkle animations
+   - Rounded corners and ribbons
+
+4. **📰 Magazine Theme** - Professional Editorial
+   - Playfair Display + Inter typography
+   - Cream background with gold accents
+   - Left sidebar TOC with drop cap
+   - Perfect for documentation and articles
+
+5. **🎮 Neon Theme** - Cyberpunk Gaming
+   - Dark background with vibrant neon glow
+   - Pulsing TODO/DONE animations
+   - Cyberpunk aesthetic with Orbitron fonts
+
+6. **⚓ Sailor Theme** - Nautical Professional
+   - Clean nautical blue and white color scheme
+   - Double border frame (8px navy + 2px white)
+   - Extremely readable TOC
+   - Professional maritime aesthetic
+
+** Theme Collection (20 Total):**
+
+*Professional & Editorial:*
+- 📖 ReadTheOrg (original)
+- 📰 Magazine (new)
+- ⚓ Sailor (new)
+- ⚡ Executive (new)
+
+*Gaming & Tech:*
+- 🎮 Neon (new)
+- 🌈 Cyberpunk
+- 🤖 AI Graph (new)
+
+*Calm & Natural:*
+- 🌲 Forest
+- 🌊 Ocean
+- 🏔️ Nord
+- 🌙 Midnight
+- 📄 Paper
+- 🌅 Sunset
+
+*Creative & Playful:*
+- 🍼 Baby (new)
+- 🎨 Solarized
+- 🌊 Glass
+
+*Minimal:*
+- ⚫ Mono
+- 🔵 BigBlow (original)
+
 * Gallery
-:PROPERTIES:
-:ID:       79e0ed21-c3b0-4f00-bdab-29fbff9dcad4
-:END:
 
 This is a list of available *HTML themes for Org mode*, which you can use right
 now!
@@ -196,19 +284,19 @@ straightforward:
 
    - You may reference the setup file directly via GitHub Pages:
 
-     #+begin_src org :exports code
-     ,#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-NAME.setup
-     #+end_src
+    #+begin_src org :exports code
+,#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-NAME.setup
+#+end_src
 
-     where =NAME= is either =bigblow= or =readtheorg=.
+     where =NAME= is either =bigblow=, =readtheorg=, or any of the new themes.
 
    - Alternatively, to avoid any dependency on an Internet connection, *clone or
      download* the =org-html-themes= repository and use the corresponding (relative
      or absolute path to the) local setup file:
 
-     #+begin_src org :exports code
-     ,#+SETUPFILE: PATH/TO/org/html-theme-NAME-local.setup
-     #+end_src
+    #+begin_src org :exports code
+,#+SETUPFILE: PATH/TO/org/html-theme-NAME-local.setup
+#+end_src
 
      In that case, the =src/= directory from the repository must be copied into
      the same directory as the Org file being exported (so that the exported
@@ -242,7 +330,7 @@ Solution provided by Malcolm Cook:
 #+begin_src org
 ,#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
 ,#+HTML_HEAD: <style> p{max-width:800px;}</style>
-,#+HTML_HEAD: <style> li{max-width:800px;}</style
+,#+HTML_HEAD: <style> li{max-width:800px;}</style>
 #+end_src
 
 * Contribute to the project!
@@ -256,16 +344,6 @@ Found a bug or have an idea for a new feature?  Share your thoughts on the
 
 I welcome contributions in any form!  Feel free to submit patches to enhance the
 project.
-
-** Support development with a donation!
-
-If you find the "org-html-themes" project (or any of [[https://github.com/fniessen/][my other projects]])
-enhancing your Emacs experience and simplifying your workflow, seize the
-opportunity to express your appreciation!  Help fuel future development by
-making a [[https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dhtml%2dthemes&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted][donation]] through PayPal. Your support is invaluable -- thank you!
-
-Remember, regardless of donations, "org-html-themes" will always remain freely
-accessible, both as in Belgian beer and as in speech.
 
 * License
 
@@ -288,7 +366,4 @@ this program.  If not, see http://www.gnu.org/licenses/.
 
 #+html: <a href="http://opensource.org/licenses/GPL-3.0">
 #+html:   <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
-#+html: </a>
-#+html: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dhtml%2dthemes&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
-#+html:   <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
 #+html: </a>

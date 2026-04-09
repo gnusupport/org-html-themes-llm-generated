@@ -56,10 +56,12 @@
 | **Personal Blog** | Baby or Magazine | Depends on style |
 | **Project Tracking** | Neon | TODO/DONE very visible |
 | **Travel Logs** | Sailor | Nautical adventure vibe |
+| **Interactive Navigation** | **AI Graph** | Force-directed graph, clickable nodes |
+| **AI/ML Projects** | **AI Graph** | Tech aesthetic, dark theme |
 
 ---
 
-## 📋 All 16 Themes at a Glance
+## 📋 All 20 Themes at a Glance
 
 | Theme | Style | Colors | Best For |
 |-------|-------|--------|----------|
@@ -79,6 +81,52 @@
 | 🌅 **Sunset** | Warm | Sunset colors | Creative |
 | 🔵 **BigBlow** | Bold | Blue/Orange | Presentations |
 | 🌈 **Cyberpunk** | Retro | Neon/Dark | Retro gaming |
+| 🤖 **AI Graph** | Interactive | Neon/Dark + Graph | AI projects, navigation ✨ |
+| ⚡ **Executive** | Business | Navy/Gold | Corporate docs ✨ |
+
+---
+
+## 🤖 AI Graph Theme - New! (April 2026)
+
+**Perfect for:**
+- AI/ML documentation
+- Technical projects with navigation
+- Interactive content exploration
+- Developer logs
+- Tech portfolios
+
+**Vibe**: Futuristic, interactive, dark space aesthetic with neon accents
+
+**Key Features:**
+- 🌐 Force-directed graph visualization (D3.js)
+- 🔗 Click nodes to navigate to sections
+- 🎯 Drag nodes to rearrange, scroll to zoom
+- 📊 Two-column layout with sidebar navigation
+- ✅ Enhanced TODO/DONE with prominent backgrounds
+- 📱 Responsive design for all devices
+
+---
+
+## ⚡ Executive Theme - New! (April 2026)
+
+**Perfect for:**
+- Corporate documentation
+- Business reports
+- Professional presentations
+- Technical documentation
+- Formal writing
+
+**Vibe**: Professional, clean, business-oriented with navy and gold accents
+
+**Key Features:**
+- 📊 Comprehensive CSS coverage (40+ selectors)
+- 💼 Navy & gold professional color scheme
+- 📝 Full Org-mode element support
+- 📚 Left sidebar TOC with gold accents
+- 🖼️ Enhanced code blocks and syntax highlighting
+- 🎨 All admonitions styled
+- 📄 Print-ready output
+- 📱 Mobile responsive
 
 ---
 
@@ -112,5 +160,8 @@ emacs --batch --visit=your-file.org --funcall org-html-export-to-html
 ---
 
 **Created**: December 2024
-**Total Themes**: 16
-**New Themes**: 4 (Baby, Magazine, Neon, Sailor)
+**Total Themes**: 20
+**Latest Additions**: 
+- Executive & AI Graph (April 2026) - Business professional & interactive navigation
+- Baby, Magazine, Neon, Sailor (December 2024) - Initial expansion
+**Development**: Themes developed with assistance from LLM (Qwen3.5-35B-A3B-UD-Q4_K_M.gguf)

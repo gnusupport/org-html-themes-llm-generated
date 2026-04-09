@@ -1,8 +1,15 @@
-# AI Graph Theme - Ready to Push to gnu-support
+# AI Graph Theme - Complete Implementation
 
 ## Summary
 
-The AI Graph theme has been developed and committed locally. It's ready to be pushed to the gnu-support repository.
+The AI Graph theme has been fully developed with LLM assistance (Qwen3.5-35B-A3B-UD-Q4_K_M.gguf) and committed locally.
+It represents the latest addition to the expanded org-html-themes collection.
+
+## Development Note
+
+This theme, along with the Executive theme and others in this fork, was developed using an LLM to create
+professional, diverse designs that honor the GNU Project's Four Software Freedoms and Richard Stallman's
+vision for free software.
 
 ## What Was Done
 
@@ -32,6 +39,16 @@ The AI Graph theme has been developed and committed locally. It's ready to be pu
 
 ### 4. Shared Library
 - **src/lib/js/org-keyboard-shortcuts.js** - Keyboard shortcuts utility
+
+## Development Approach
+
+This theme and the expanded theme collection were developed with assistance from an LLM
+(Qwen3.5-35B-A3B-UD-Q4_K_M.gguf), following these principles:
+
+1. **Preserve Original Spirit**: Maintain compatibility with Fabrice Niessen's original themes
+2. **Enhance Diversity**: Create 20+ unique themes covering various use cases
+3. **Maintain Quality**: Ensure all themes are professional, accessible, and well-tested
+4. **Honor Freedom**: Keep everything GPL-3.0 licensed, respecting the Four Software Freedoms
 
 ## Local Commit
 

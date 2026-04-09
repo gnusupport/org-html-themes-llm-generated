@@ -1,5 +1,12 @@
 # Theme CSS Coverage Comparison
 
+## Acknowledgments
+
+This fork of org-html-themes was developed with assistance from an LLM
+(Qwen3.5-35B-A3B-UD-Q4_K_M.gguf), expanding the original project significantly
+with 20+ professional themes while maintaining the spirit of the Four Software
+Freedoms.
+
 ## Executive Theme - Before vs After
 
 ### Before (Incomplete Coverage)
@@ -35,13 +42,16 @@
 
 ## Comparison with Established Themes
 
-| Theme | CSS Lines | Classes | Coverage |
-|-------|-----------|---------|----------|
-| **readtheorg** | 1,150 | 43 | Baseline (professional docs) |
-| **bigblow** | 761 | ~35 | Good coverage |
-| **executive (new)** | ~1,200 | 40 | ✅ Full readtheorg compatibility |
-| **baby** | 825 | ~25 | Basic coverage |
-| **neon** | ~900 | ~30 | Gaming-focused |
+| Theme | CSS Lines | Classes | Coverage | Key Features |
+|-------|-----------|---------|----------|-------------|
+| **readtheorg** | 1,150 | 43 | Baseline (professional docs) | Gold standard for documentation |
+| **bigblow** | 761 | ~35 | Good coverage | Bold, presentation-focused |
+| **executive (new)** | ~1,200 | 40 | ✅ Full readtheorg compatibility | Navy/gold, business professional |
+| **baby** | 825 | ~25 | Basic coverage | Pastel, playful, family-friendly |
+| **neon** | ~900 | ~30 | Gaming-focused | Cyberpunk, dark theme, glowing |
+| **sailor** | ~750 | ~28 | Good coverage | Nautical, clean, maritime |
+| **forest** | ~800 | ~26 | Nature-focused | Green tones, eco-friendly |
+| **ai_graph** | ~630 | ~35 | Full + Interactive | D3.js graph, two-column layout |
 
 ## What This Means
 
@@ -84,6 +94,31 @@ The `test-executive.org` file now includes examples of:
 - **Bold Section Numbers** with gold/blue/gold accents
 - **Clean Corporate Tables** with gold headers
 - **Responsive Design** that works on all devices
+
+---
+
+## 🤖 AI Graph Theme - Visual Comparison
+
+The **AI Graph Theme** takes a different approach:
+
+- **Interactive Navigation**: Force-directed graph with clickable nodes
+- **Dark Space Aesthetic**: Deep blue/black background with neon accents
+- **Two-Column Layout**: Optional sidebar navigation
+- **Enhanced TODO/DONE**: Prominent green backgrounds with glow effects
+- **D3.js Powered**: Real-time physics-based node positioning
+- **Modern Tech Vibe**: Orbitron fonts, glowing effects, futuristic UI
+
+### Comparison with Executive Theme:
+
+| Feature | Executive | AI Graph |
+|---------|-----------|----------|
+| Style | Business Professional | Futuristic Interactive |
+| Navigation | Table of Contents | Clickable Graph Nodes |
+| Color Scheme | Navy/Gold | Deep Blue/Cyan/Purple |
+| Layout | Traditional Sidebar | Full-page Graph or Two-Column |
+| Interactivity | Standard | Drag, Zoom, Click Nodes |
+| Best For | Corporate Docs | AI/Tech Projects |
+| Dependencies | None | D3.js (CDN) |
 
 ---
 
